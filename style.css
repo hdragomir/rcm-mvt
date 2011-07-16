@@ -172,7 +172,7 @@ footer{ margin-top: 120px; }
     #wrap a{ text-decoration: underline; color: #592f9d; }
     #wrap a:hover{ text-decoration: none; color: #201741 }
 
-    #wrap h1{ font: bold 24px/34px Arial, Helvetica, sans-serif; color: #201741; margin-bottom: 35px; }
+    h1{ font: bold 24px/34px Arial, Helvetica, sans-serif; color: #201741; margin-bottom: 35px; }
     #wrap .preh1{ font: normal 12px/34px Arial, Helvetica, sans-serif; }
 
 
@@ -328,6 +328,8 @@ ul.linker{ font-size: 18px; margin-left: 0; }
     #homepage-slider .next{ background-image: url('img/arrow-right.png'); right: -26px; }
     #homepage-slider .prev{ background-image: url('img/arrow-left.png'); left: -26px; }
 
+
+#greeter{ width: 640px; margin-bottom: 50px; font-size: 14px; font-weight: bold; line-height: 24px; color: #000; display: none; }
 
 
 .left{float: left;}

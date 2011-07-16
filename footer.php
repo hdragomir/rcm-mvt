@@ -2,6 +2,7 @@
 <footer>
 
     <div class="top cc">
+        <h1>Parteneri / Sponsori</h1>
         <section id="partners" class=ir></section>
     </div><div class="bottom">
 

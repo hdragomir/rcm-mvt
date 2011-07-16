@@ -2,6 +2,14 @@
 
 <div id="wrap" class="cc">
 
+
+    <p id="greeter">
+
+        Vă urăm bun venit pe siteul oficial al Clubului Municipal de Rugby MVT „Universitatea de Vest” Timişoara. Acest site este dedicat tuturor celor implicaţi sau interesaţi de sportul cu balonul oval.<br>
+        Pentru că rugby înseamnă demnitate si onoare, ne mândrim să vă avem aproape la bine si la greu. Aici nimeni nu se da rodund!
+    </p>
+
+
     <section class="recent clearfix">
 
         <a href="<?php to_page('media/stiri'); ?>" class="right preh1">Vezi arhiva de Stiri &raquo;</a>

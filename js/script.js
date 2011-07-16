@@ -8,8 +8,8 @@ $(function(){
             current = 0, interval = null, timeout = null,
 
             to = function( nth ){
-                var c = slides.eq(slider.data('current'));
-                slides.eq(nth).css('z-index', 200).hide().fadeIn('fast');
+                var c = slides.eq(slider.data('current')).css('z-index', 99);
+                slides.eq(nth).css('z-index', 100).hide().fadeIn('fast');
                 c.fadeOut('fast');
                 slider.data('current', nth);
                 return true;
@@ -33,12 +33,12 @@ $(function(){
             interval && clearInterval(interval);
             timeout && clearTimeout(timeout);
             timeout = setTimeout(function(){
-                interval = setInterval(next, 3000);
+                interval = setInterval(next, 7000);
             }, 2000)
             $(this).is('.prev') && prev() || next();
         });
 
-        interval = setInterval(next, 3000);
+        interval = setInterval(next, 7000);
 
         slider.data('current', 0);
         slider.data('all', all);
