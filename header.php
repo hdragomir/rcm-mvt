@@ -25,6 +25,26 @@
         <a class=ir id=logo href="<?php bloginfo('home'); ?>"><?php bloginfo('site_title'); ?></a>
         <?php wp_nav_menu(array('menu' => 'nav', 'theme_location' => 'Navigation', 'depth' => 2, 'container' => 'nav', 'menu_class' => 'dd', 'menu_id' => 'topnav', 'walker' => new extended_walker())); ?>
     </div>
+
+
+    <?php if(is_home()): ?>
+
+    <div id="homepage-slider">
+
+        <div class="slide">
+
+            <img src="<?php echo get_template_directory_uri(); ?>/slides/01.jpg" alt="" />
+            <div class="text-wrap">
+                <div class="text">Bine ati venit pe site-ul oficial al clubului de rugby RCM MVT Universitatea de Vest Timisoara! <br /> Aici nimeni nu se dă rotund!</div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <?php endif; ?>
+
+
 </header>
 
 <?php $match_query = new WP_Query('post_status=future&post_type=matches&numberposts=1&order=asc');

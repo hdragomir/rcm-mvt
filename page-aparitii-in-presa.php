@@ -5,7 +5,10 @@
         <h1><?php the_title(); ?></h1>
 
 
-        <div class="post-content"><?php the_content(); ?></div>
+       <?php if($content = get_the_content()): ?>
+        <div class="post-content"><?php echo $content; ?></div>
+        <div class="space">&nbsp;</div>
+        <?php endif; ?>
 
         <ul class="linker">
             <?php wp_list_bookmarks(array(
