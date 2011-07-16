@@ -76,7 +76,7 @@ button {  width: auto; overflow: visible; }
 body, select, input, textarea {  color: #444; }
 h1, h2, h3, h4, h5, h6 { font-weight: bold; }
 a, a:active, a:visited { color: #607890; }
-a:hover { color: #036; }
+a:hover { color: #036; text-decoration: none; }
 
 /*
     // ========================================== \\
@@ -92,7 +92,7 @@ a:hover { color: #036; }
 
 
 header{
-    background: url(img/head.jpg) 50% 0 fixed;
+    background: url(img/head.jpg) 50% 0 scroll;
     height: 165px;
 }
 
@@ -104,7 +104,6 @@ header{
     #topnav{width: 100%; font-size: 16px; }
         #topnav > li { display: inline-block; position: relative; vertical-align: top; list-style: none; width: auto; color: #ffda0e; margin-left: 40px;}
             #topnav > li a{  padding: 4px 16px 4px 0px; display: block; text-decoration: none; color: #ffda0e; font-weight: bold;}
-            #topnav > li > a{  }
 
         #topnav > li:hover a{ color: #fff; }
 
@@ -138,6 +137,51 @@ header{
             #next-match-push article .who .vs{ color: #fff; color: rgba(255,255,255, .5); display: inline-block; margin: 0 8px; }
         #next-match-push article .meta{ font-size: 14px; color: white; }
             #next-match-push article .meta .slash{ color: #5d4884; display: inline-block; margin: 0 5px; }
+
+
+
+footer{  }
+    footer .top{ position: relative; display: none; }
+    #partners{
+        height: 164px; width: 940px; background-image: url('img/partners.jpg'); margin-top: 55px;
+    }
+
+
+    .home footer .top{ display: block; }
+    footer .bottom{ background: url(img/footer.jpg) 50% 0 repeat-x; height: 351px; margin-top: 30px; position: relative; }
+        footer .bottom .cc{ position: relative; height: 351px; }
+
+
+
+
+
+
+#to-fb{ width: 430px; height: 41px; position: absolute; top: 25px; left: 35px; }
+
+#footernav {position: relative; top: 111px; left: 139px;}
+
+#footernav > li{ height: 120px; width: 135px; display: inline-block; vertical-align: top; padding-left: 25px; border-left: 1px solid #5d4884; border-left-color: rgba(255,255,255, .2) }
+
+    #footernav > li > a{ display: block; text-decoration: none; color: #ffda0e; font-weight: bold; margin-bottom: 10px; font-size: 16px; }
+
+    #footernav ul li a, #footermisc a{ color: #fff; text-decoration: none; font-size: 12px; line-height: 18px; }
+    #footernav ul li a:hover, #footermisc a:hover{ text-decoration: underline; }
+
+    #footermisc, #footercopy{ color: #fff; text-decoration: none; font-size: 12px; line-height: 18px; position: absolute; display: inline-block; bottom: 25px; }
+
+    #footermisc{ right: 0; }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
