@@ -30,7 +30,7 @@
     <?php if(is_home()): ?>
 
     <div id="homepage-slider">
-
+        <a href="#" class="prev ir">&lsaquo;</a>
         <div class="slide">
 
             <img src="<?php echo get_template_directory_uri(); ?>/slides/01.jpg" alt="" />
@@ -39,6 +39,81 @@
             </div>
 
         </div>
+
+
+        <div class="slide">
+
+            <img src="<?php echo get_template_directory_uri(); ?>/slides/01.jpg" alt="" />
+            <div class="text-wrap">
+                <div class="text">Respect</div>
+            </div>
+
+        </div>
+
+        <div class="slide">
+
+            <img src="<?php echo get_template_directory_uri(); ?>/slides/01.jpg" alt="" />
+            <div class="text-wrap">
+                <div class="text">Loialitate</div>
+            </div>
+
+        </div>
+
+        <div class="slide">
+
+            <img src="<?php echo get_template_directory_uri(); ?>/slides/01.jpg" alt="" />
+            <div class="text-wrap">
+                <div class="text">Ofensiva</div>
+            </div>
+
+        </div>
+
+        <div class="slide">
+
+            <img src="<?php echo get_template_directory_uri(); ?>/slides/01.jpg" alt="" />
+            <div class="text-wrap">
+                <div class="text">Indemare</div>
+            </div>
+
+        </div>
+
+        <div class="slide">
+
+            <img src="<?php echo get_template_directory_uri(); ?>/slides/01.jpg" alt="" />
+            <div class="text-wrap">
+                <div class="text">Fair-play</div>
+            </div>
+
+        </div>
+
+        <div class="slide">
+
+            <img src="<?php echo get_template_directory_uri(); ?>/slides/01.jpg" alt="" />
+            <div class="text-wrap">
+                <div class="text">Onoare</div>
+            </div>
+
+        </div>
+
+        <div class="slide">
+
+            <img src="<?php echo get_template_directory_uri(); ?>/slides/01.jpg" alt="" />
+            <div class="text-wrap">
+                <div class="text">Control</div>
+            </div>
+
+        </div>
+
+        <div class="slide">
+
+            <img src="<?php echo get_template_directory_uri(); ?>/slides/01.jpg" alt="" />
+            <div class="text-wrap">
+                <div class="text">Posesie</div>
+            </div>
+
+        </div>
+
+        <a href="#" class="next ir">&lsaquo;</a>
 
     </div>
 

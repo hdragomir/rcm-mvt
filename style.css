@@ -103,9 +103,11 @@ header{
 
     #topnav{width: 100%; font-size: 16px; }
         #topnav > li { display: inline-block; position: relative; vertical-align: top; list-style: none; width: auto; color: #ffda0e; margin-left: 40px;}
-            #topnav > li a{  padding: 4px 16px 4px 0px; display: block; text-decoration: none; color: #ffda0e; font-weight: bold;}
+            #topnav > li a{  padding: 4px 16px 4px 0px; display: block; text-decoration: none; color: #ffda0e; font-weight: bold;
+                background: transparent url(img/arrow-down.png) 100% 10px no-repeat;
+            }
 
-        #topnav > li:hover a{ color: #fff; }
+        #topnav > li:hover a{ color: #fff; background: none; }
 
 
 
@@ -319,7 +321,12 @@ ul.linker{ font-size: 18px; margin-left: 0; }
         #homepage-slider .slide .text-wrap{ position: absolute; bottom: 0; width: 858px; background: #000; background: rgba(0,0,0, .5); padding: 25px 35px; }
         #homepage-slider .slide .text{ font-weight: bold; font-size: 18px; color: #fff; width: 440px; }
 
+        #homepage-slider .slide + .slide {display: none;}
 
+
+    #homepage-slider .ir{ position: absolute; top: 50%; margin-top: -12px; width: 15px; height: 25px; }
+    #homepage-slider .next{ background-image: url('img/arrow-right.png'); right: -26px; }
+    #homepage-slider .prev{ background-image: url('img/arrow-left.png'); left: -26px; }
 
 
 
