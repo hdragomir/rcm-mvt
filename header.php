@@ -26,18 +26,33 @@
         <?php wp_nav_menu(array('menu' => 'nav', 'theme_location' => 'Navigation', 'depth' => 2, 'container' => 'nav', 'menu_class' => 'dd', 'menu_id' => 'topnav', 'walker' => new extended_walker())); ?>
     </div>
 </header>
+
+<?php $match_query = new WP_Query('post_status=future&post_type=matches&numberposts=1&order=asc');
+if($match_query->have_posts()):
+    $match = array_shift($match_query->get_posts());
+?>
+
 <section id="next-match-push">
     <div class="cc">
         <div class="title">Următorul Meci:</div>
+
         <article>
             <div class="who">
-                <span class="us">RCM Universitatea de Vest Timisoara</span>
+                <?php $us = 'RCM Universitatea de Vest Timisoara';
+                    $them = array_shift(get_the_terms($match->ID, 'versus'))->name;
+                    $at_home = ! get_post_meta($match->ID, 'deplasare', true);
+                ?>
+                <span class="host"><?php echo $at_home ? $us : $them; ?></span>
                 <span class="vs">vs.</span>
-                <span class="them">CSM Bucuresti</span>
+                <span class="guest"><?php echo $at_home ? $them : $us; ?></span>
             </div>
-            <div class="meta">22 Octombrie 2011, Ora 15:00 <span class="slash">/</span> Stadionul RCM - Gheorghe Rascanu</div>
+            <div class="meta"><?php echo date('d F Y, \O\r\a H:i', strtotime($match->post_date)); ?><span class="slash">/</span> <?php echo get_post_meta($match->ID, 'unde', true); ?></div>
 
         </article>
         <a href="<?php to_page('echipa/calendar-meciuri'); ?>" class="cta">Vezi Calendarul de Meciuri &raquo;</a>
     </div>
 </section>
+
+<?php
+    wp_reset_query();
+endif; ?>

@@ -109,7 +109,7 @@ header{
 
 
 
-            #topnav > li ul { background: #130835; position: absolute; padding: 10px; width: 170px; font-size: .8em; display: none; opacity: 0; left: -10px;
+            #topnav > li ul { background: #592f9d; position: absolute; padding: 10px; width: 170px; font-size: .8em; display: none; opacity: 0; left: -10px;
                 border-radius: 2px;
 
                         box-shadow: 0 1px 7px 1px rgba(0,0,0, .63);
@@ -202,12 +202,95 @@ footer{  }
     .article-list article h2{ font-size: 18px; line-height: 24px; margin-bottom: 10px; color: #592f9d }
         #wrap .article-list article h2 a{ color: #592f9d; text-decoration: none; }
 
+    #wrap .eventslist article{ height: 120px; }
+
 .read-news-cta{ width: 125px; height: 35px; margin-top: 10px; background-image: url(img/read-more.png); }
 
+#wrap .g_100 .post-content{margin-right: 0; }
+
+.post-content p{margin: 1em 0;}
+
+
+.g_100{ width: 100%; position: relative; }
+
+.g_50{width: 50%; float: left; position: relative; }
+
+.g_33{ width: 33.3%; float: left; position: relative; }
+
+.space:after{ clear: both; height: 40px; content:" "; zoom:1; display: block;}
+.space{zoom: 1;}
+
+
+.gr{width: 100%; position: relative;}
+.gr .gr1{ width: 38%;  margin-left: 62%; position: relative; }
+.gr .gr16{ width: 62%; float: left; position: relative; }
 
 
 
+.player-list{margin-right: -25px;}
 
+.player-list .player{ float: left; width: 290px; height: 290px; margin-right: 25px; }
+
+    #wrap .player-list .player a{ position: relative; width: 290px; height: 290px; display: block; text-decoration: none; }
+        .player-list .player a b{ position: absolute; left: 10px; background-color: #592f9d; bottom: 10px; width: 250px; padding: 15px; height: 50px;
+                text-align: right; color: #fff; display: block;
+                transition: all .2s; -o-transition: all .2s; -webkit-transition: all .2s; -moz-transition: all .2s; -ms-transition: all .2s;
+            }
+            .player-list .player a b span{ display: block; padding: 4px 0; }
+            .player-list .player a b .name{ font-size: 16px; border-bottom: 1px solid #7f7f7f; transition: all .2s; -o-transition: all .2s; -webkit-transition: all .2s; -moz-transition: all .2s; -ms-transition: all .2s;
+                text-decoration: none;
+            }
+            .player-list .player a b .position{ font-size: 12px; text-transform: uppercase; text-decoration: none;}
+
+
+            .player-list .player a b:before{ width: 10px; margin-left: -10px; background-color: #5d4884; height: 80px; content: " "; position: absolute; left: 0; bottom: -5px;
+                -ms-transform: skew(0, -45deg); -o-transform: skew(0, -45deg); -webkit-transform: skew(0, -45deg); -moz-transform: skew(0, -45deg); transform: skew(0, -45deg);
+                transition: all .2s; -o-transition: all .2s; -webkit-transition: all .2s; -moz-transition: all .2s; -ms-transition: all .2s;
+            }
+
+            .player-list .player a:hover b{ background: #01b0f0; color: #fff; }
+
+            .player-list .player a:hover b .name{ border-color: #01b0f0 }
+            .player-list .player a:hover b:before{ background: #0191c6; }
+
+
+.single .attachment-player-thumbnail{ width: 290px; margin: 20px auto 0; display: block; }
+
+
+.panes{ margin-top: 50px; }
+
+    .panes .pane{ width: 460px; height: 480px; background: url(img/pane-left.jpg) 0 0 no-repeat; float: left; position: relative; }
+
+    .panes .pane + .pane{ margin-left: 20px; background-image: url(img/pane-right.jpg); }
+
+        .panes .pane .bottom{position: absolute; bottom: 0; height: 67px; border-top: 1px solid #140d34; width: 460px; }
+
+        .panes .pane .top{ padding: 20px 35px; height: 45px; }
+
+        .panes .pane h3{ color: #fff; font-size: 24px; font-weight: bold; }
+
+        .panes .pane p{ font-size: 14px; color: #fff; line-height: 22px; margin-top: 5px; }
+
+        .panes .pane ul, .panes .pane ol{ margin: 0; }
+
+        .panes .pane ol li { list-style: decimal inside; }
+
+            .panes .pane li{ color: #fff; padding-left: 35px; padding-right: 35px; display: block; font-weight: bold; font-size: 14px;}
+
+            .panes .pane ul li{ padding-top: 20px; padding-bottom: 20px; }
+                .panes .pane ul li span{ display: block }
+                    .panes .pane ul li span.score{ font-size: 18px; padding-top: 10px; }
+
+            .panes .pane ol li{ line-height: 41px; }
+                .panes .pane ol li.us{ background-color: rgba(255,255,255, .1); }
+
+            .panes .pane li:nth-child(odd){ background-color: rgba(0,0,0, .3) }
+
+            .panes .pane li .nth{ font-weight: normal; display: inline-block; width: 15px;}
+
+        .panes .pane .ir { margin-top: 19px; margin-left: 33px; height: 30px; }
+        .view-all-results-cta{ width: 176px; background-image: url('img/view-all-results.png') }
+        .view-all-rankings-cta{ width: 189px; background-image: url('img/view-all-rankings.png') }
 
 
 

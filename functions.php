@@ -13,7 +13,7 @@ add_action('init', 'rcm_init');
 function rcm_init(){
 
 
-    add_image_size('page-thumbnail', 960, 240, true);
+    add_image_size('page-thumbnail', 940, 240, true);
     add_image_size('player-thumbnail', 290, 290, true);
 
     register_post_type('player', array(
@@ -44,11 +44,35 @@ function rcm_init(){
         'supports' => array('title', 'thumbnail', 'excerpt', 'editor', 'custom-fields', 'post-formats', 'post-thumbnails')
     ));
 
+
     register_taxonomy('league', 'matches', array(
-
-
-
+        'labels' => array(
+            'name' => 'Campionate',
+            'singular_name' => 'Campionat',
+            'choose_from_most_used' => 'Alege dintre cele mai folosite'
+        )
     ));
+
+    register_taxonomy('versus', 'matches', array(
+        'labels' => array(
+            'name' => 'Echipe',
+            'singular_name' => 'Echipa',
+            'choose_from_most_used' => 'Alege dintre celi mai folositi'
+        )
+    ));
+
+
+    register_post_type('rankings', array(
+        'labels' => array(
+            'name' => 'Pozitii in Clasament',
+            'singular_name' => 'Pozitie'
+        ),
+        'public' => true,
+        'supports' => array('custom-fields', 'title')
+    ));
+
+    register_taxonomy_for_object_type('league', 'rankings');
+    register_taxonomy_for_object_type('versus', 'rankings');
 
 
 
