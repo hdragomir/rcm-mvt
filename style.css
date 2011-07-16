@@ -270,6 +270,8 @@ ul.linker{ font-size: 18px; margin-left: 0; }
 
     .panes.full .pane{ width: 940px; margin-bottom: 20px; }
 
+    .panes.fat .pane { background: url(img/pane-fat.jpg) repeat; height: auto; padding-bottom: 30px; }
+
     .panes .pane + .pane{ margin-left: 20px; background-position: 100% 0; }
 
         .panes .pane .bottom{position: absolute; bottom: 0; height: 67px; border-top: 1px solid #140d34; width: 460px; }
@@ -288,6 +290,8 @@ ul.linker{ font-size: 18px; margin-left: 0; }
 
             .panes .pane td{ color: #fff; font-weight: bold; font-size: 14px; line-height: 41px; height: 41px; }
 
+            .panes.fat .pane td{ padding: 10px 5px; }
+
             .panes .pane ul li{ padding-top: 20px; padding-bottom: 20px; }
                 .panes .pane ul li span{ display: block }
                     .panes .pane ul li span.score{ font-size: 18px; padding-top: 10px; }
@@ -295,13 +299,21 @@ ul.linker{ font-size: 18px; margin-left: 0; }
             .panes .pane ol li{ line-height: 41px; }
                 .panes .pane ol li.us{ background-color: rgba(255,255,255, .1); }
 
+                #wrap .panes .pane tr.us td{ background-color: rgba(255,255,255, .1); }
+
+
             .panes .pane li:nth-child(odd), .panes .pane tr:nth-child(even) td{ background-color: rgba(0,0,0, .3) }
 
             .panes .pane li .nth{ font-weight: normal; display: inline-block; width: 15px;}
 
         .panes .pane td.nth{ width: 45px; text-align: right; padding-right: 5px; font-weight: normal; }
+        .panes.fat .pane .when{ width: 135px; text-align: right; padding-right: 15px; padding-left: 10px; font-weight: normal; font-size: 12px; }
 
-        .panes .pane td.host{}
+        .panes .pane td.teams{ line-height: 24px; }
+        .panes .pane td.where{ width: 200px; }
+
+        .panes.fat .pane  .score{ line-height: 24px;}
+        .panes.fat .pane  .score .at-break{ font-weight: normal; font-size: 12px; }
 
         .panes .pane td.games, .panes .pane td.wins, .panes .pane td.draws, .panes .pane td.losses, .panes .pane td.bonus{ width: 80px; font-weight: normal; }
         .panes .pane td.esv{ font-weight: normal; }

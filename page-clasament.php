@@ -16,7 +16,7 @@
 
             foreach($leagues as $league ): ?>
 
-            <div class="pane" id=rankings>
+            <div class="pane">
                 <div class="top">
                     <h3><?php echo $league->description? $league->description : $league->name; ?></h3>
                 </div>
