@@ -4,7 +4,7 @@
 
     <section class="recent clearfix">
 
-        <a href="<?php to_page('stiri'); ?>" class="right preh1">Vezi arhiva de Stiri &raquo;</a>
+        <a href="<?php to_page('media/stiri'); ?>" class="right preh1">Vezi arhiva de Stiri &raquo;</a>
         <h1>Stiri / Evenimente / Noutati</h1>
 
         <div class="article-list clearfix">

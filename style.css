@@ -111,6 +111,11 @@ header{
 
             #topnav > li ul { background: #130835; position: absolute; padding: 10px; width: 170px; font-size: .8em; display: none; opacity: 0; left: -10px;
                 border-radius: 2px;
+
+                        box-shadow: 0 1px 7px 1px rgba(0,0,0, .63);
+                -webkit-box-shadow: 0 1px 7px 1px rgba(0,0,0, .63);
+                   -moz-box-shadow: 0 1px 7px 1px rgba(0,0,0, .63);
+                     -o-box-shadow: 0 1px 7px 1px rgba(0,0,0, .63);
             }
             #topnav > li:last-child ul{right: 0; left: auto; width: 150px;}
             #topnav > li:first-child{margin-left: 0; }
@@ -191,7 +196,8 @@ footer{  }
 
 
 
-.article-list article{ float: left; width: 299px; height: 240px; }
+.article-list article{ float: left; width: 279px; height: 240px; padding-left: 20px; border-left: 1px solid #d0cfd6;  padding-right: 20px; }
+    .article-list article:first-child{ padding-left: 0; border-left: 0;  }
     article .date{ color: #594394; text-transform: capitalize; }
     .article-list article h2{ font-size: 18px; line-height: 24px; margin-bottom: 10px; color: #592f9d }
         #wrap .article-list article h2 a{ color: #592f9d; text-decoration: none; }

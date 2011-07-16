@@ -35,9 +35,9 @@
                 <span class="vs">vs.</span>
                 <span class="them">CSM Bucuresti</span>
             </div>
-            <div class="meta">h3llo <span class="slash">/</span> where</div>
+            <div class="meta">22 Octombrie 2011, Ora 15:00 <span class="slash">/</span> Stadionul RCM - Gheorghe Rascanu</div>
 
         </article>
-        <a href="<?php to_page('calendar-meciuri'); ?>" class="cta">Vezi Calendarul de Meciuri &raquo;</a>
+        <a href="<?php to_page('echipa/calendar-meciuri'); ?>" class="cta">Vezi Calendarul de Meciuri &raquo;</a>
     </div>
 </section>
