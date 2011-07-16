@@ -12,6 +12,7 @@ add_action('init', 'rcm_init');
 
 function rcm_init(){
 
+
     add_image_size('page-thumbnail', 960, 240, true);
     add_image_size('player-thumbnail', 290, 290, true);
 
@@ -45,7 +46,7 @@ function rcm_init(){
 
     register_taxonomy('league', 'matches', array(
 
-        
+
 
     ));
 
