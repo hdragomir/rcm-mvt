@@ -44,6 +44,18 @@ function rcm_init(){
         'supports' => array('title', 'thumbnail', 'excerpt', 'editor', 'custom-fields', 'post-formats', 'post-thumbnails')
     ));
 
+    register_post_type('tv_schedule', array(
+        'labels' => array(
+            'name' => 'Program TV',
+            'singular_name' => 'Program TV',
+            'add_new_item' => 'Adaugă o Transmisie',
+            'edit_item' => 'Schimbă Transmisia'
+        ),
+        'public' => true,
+        'rewrite' => array('slug' => 'program-tv', 'with_front' => true),
+        'supports' => array('title', 'excerpt', 'custom-fields')
+    ));
+
 
     register_taxonomy('league', 'matches', array(
         'labels' => array(
@@ -57,7 +69,7 @@ function rcm_init(){
         'labels' => array(
             'name' => 'Echipe',
             'singular_name' => 'Echipa',
-            'choose_from_most_used' => 'Alege dintre celi mai folositi'
+            'choose_from_most_used' => 'Alege dintre cei mai folositi'
         )
     ));
 
@@ -73,6 +85,16 @@ function rcm_init(){
 
     register_taxonomy_for_object_type('league', 'rankings');
     register_taxonomy_for_object_type('versus', 'rankings');
+    register_taxonomy_for_object_type('versus', 'tv_schedule');
+    register_taxonomy_for_object_type('league', 'tv_schedule');
+
+    register_taxonomy('tv_program', 'tv_schedule', array(
+        'labels' => array(
+            'name' => 'Programe',
+            'singular_name' => 'Program',
+            'choose_from_most_used' => 'Alege dintre cele mai folosite'
+        )
+    ));
 
 
 
