@@ -136,12 +136,14 @@ if($match_query->have_posts()):
                 <?php $us = 'RCM Universitatea de Vest Timisoara';
                     $them = array_shift(get_the_terms($match->ID, 'versus'))->name;
                     $at_home = ! get_post_meta($match->ID, 'deplasare', true);
+                    $stadium = @array_shift( get_the_terms($match->ID, 'stadium') );
+                    $stadium and ( $stadium = $stadium->name ) or $stadium = get_post_meta($match->ID, 'unde', true);
                 ?>
                 <span class="host"><?php echo $at_home ? $us : $them; ?></span>
                 <span class="vs">vs.</span>
                 <span class="guest"><?php echo $at_home ? $them : $us; ?></span>
             </div>
-            <div class="meta"><?php echo date('d F Y, \O\r\a H:i', strtotime($match->post_date)); ?><span class="slash">/</span> <?php echo get_post_meta($match->ID, 'unde', true); ?></div>
+            <div class="meta"><?php echo date('d F Y, \O\r\a H:i', strtotime($match->post_date)); ?><span class="slash">/</span> <?php echo $stadium; ?></div>
 
         </article>
         <a href="<?php to_page('echipa/calendar-meciuri'); ?>" class="cta">Vezi Calendarul de Meciuri &raquo;</a>

@@ -48,11 +48,10 @@ function rcm_init(){
         'labels' => array(
             'name' => 'Program TV',
             'singular_name' => 'Program TV',
-            'add_new_item' => 'Adaugă o Transmisie',
-            'edit_item' => 'Schimbă Transmisia'
+            'add_new_item' => 'Adaugă o Emisiune',
+            'edit_item' => 'Schimbă Emisiunea'
         ),
         'public' => true,
-        'rewrite' => array('slug' => 'program-tv', 'with_front' => true),
         'supports' => array('title', 'excerpt', 'custom-fields')
     ));
 
@@ -64,6 +63,12 @@ function rcm_init(){
             'choose_from_most_used' => 'Alege dintre cele mai folosite'
         )
     ));
+
+    register_taxonomy('stadium', 'matches', array(
+        'labels' => array( 'name' => 'Stadioane',
+                           'singular_name' => 'Stadion',
+                           'choose_from_most_used' => 'Alege dintre cele mai folosite'
+    )));
 
     register_taxonomy('versus', 'matches', array(
         'labels' => array(
@@ -95,8 +100,6 @@ function rcm_init(){
             'choose_from_most_used' => 'Alege dintre cele mai folosite'
         )
     ));
-
-
 
 }
 
@@ -192,4 +195,48 @@ function rcm_the_facebook_event_link(){
 
 function rcm_has_facebook_event(){
     return !!rcm_get_the_facebook_event_link();
+}
+
+
+function rcm_term_name($term){
+    return $term->description? $term->description : $term->name;
+}
+
+
+
+$rcm_meta_boxes = array(
+    'tv_schedule' => array(
+        'id' => 'schedule-entry-id',
+        'title' => 'ID-ul Emisiunii',
+        'page' => 'tv_schedule',
+        'context' => 'side',
+        'priority' => 'high',
+        'callback'=> 'rcm_show_tv_schedule_meta_box'
+    )
+
+);
+
+add_action('admin_menu', 'rcm_add_meta_boxes');
+function rcm_add_meta_boxes(){
+    global $rcm_meta_boxes;
+    foreach($rcm_meta_boxes as $m)
+        add_meta_box($m['id'], $m['title'], $m['callback'], $m['page'], $m['context'], $m['priority']);
+}
+
+function rcm_show_tv_schedule_meta_box(){
+    global $tk_meta_boxes, $post;
+    $m = $tk_meta_boxes['tv_schedule'];
+    if($post->ID): ?>
+
+    ID-ul emisiunii: <strong><?php echo $post->ID; ?></strong>
+
+    <?php endif;
+}
+
+
+function rcm_get_match_stadium($match_ID = null){
+    null == $match_ID && ( $match_ID = get_the_ID() );
+    $stadium = @array_shift( get_the_terms($match_ID, 'stadium') );
+    return $stadium ? $stadium->name : get_post_meta($match_ID, 'unde', true);
+
 }
