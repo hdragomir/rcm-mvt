@@ -8,6 +8,10 @@
 
         <div class="cc">
 
+            <div id="fb-like">
+                <iframe src="http://www.facebook.com/plugins/like.php?app_id=135611876524447&amp;href=http%3A%2F%2Fwww.facebook.com%2Fpages%2FRugby-Club-Timisoara-Pagina-oficiala%2F224404584253969&amp;send=false&amp;layout=standard&amp;width=420&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font=arial&amp;height=35" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:420px; height:24px;" allowTransparency="true"></iframe>
+            </div>
+
             <a href="http://www.facebook.com/pages/Rugby-Club-Timisoara-Pagina-oficiala/224404584253969" rel="me external" id="to-fb" class=ir>facebook </a>
 
 

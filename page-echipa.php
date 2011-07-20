@@ -18,10 +18,15 @@
 
         <h1>Jucatorii Echipei</h1>
 
+        <?php foreach( array('A' => 'Hello', 'B' => 'Bubu') as $_post => $_post_nicename):
+
+        $posts = new WP_Query('post_type=player&posts_per_page=-1&meta_key=post&meta_value=' . $_post);
+
+        if($posts->have_posts()): ?>
+
         <div class="player-list clearfix">
-            <?php
-            $posts = new WP_Query('post_type=player&posts_per_page=-1&meta_key=pozitie');
-            while($posts->have_posts()): $posts->the_post(); ?>
+            <h1><?php echo $_post_nicename; ?></h1>
+            <?php while($posts->have_posts()): $posts->the_post(); ?>
             <div class="player">
                 <a href="<?php the_permalink(); ?>">
                     <?php the_post_thumbnail('player-thumbnail'); ?>
@@ -34,7 +39,10 @@
 
 
 
+
+
         </div>
+        <?php  endif; endforeach; ?>
 
     </article>
 </div>

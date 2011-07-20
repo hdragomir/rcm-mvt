@@ -243,7 +243,7 @@ ul.linker{ font-size: 18px; margin-left: 0; }
 
 .player-list{margin-right: -25px;}
 
-.player-list .player{ float: left; width: 290px; height: 290px; margin-right: 25px; }
+.player-list .player{ float: left; width: 290px; height: 290px; margin-right: 25px; margin-bottom: 25px; }
 
     #wrap .player-list .player a{ position: relative; width: 290px; height: 290px; display: block; text-decoration: none; }
         .player-list .player a b{ position: absolute; left: 10px; background-color: #592f9d; bottom: 10px; width: 250px; padding: 15px; height: 50px;
@@ -352,6 +352,8 @@ ul.linker{ font-size: 18px; margin-left: 0; }
 
 #greeter{ width: 640px; margin-bottom: 50px; font-size: 14px; font-weight: bold; line-height: 24px; color: #000; display: none; }
 
+
+#fb-like{ width: 420px; height: 24px; padding: 8px 10px; background: white; border-radius: 5px; right: 15px; top: 18px; position: absolute;}
 
 .left{float: left;}
 .right{float: right;}
