@@ -212,6 +212,14 @@ $rcm_meta_boxes = array(
         'context' => 'side',
         'priority' => 'high',
         'callback'=> 'rcm_show_tv_schedule_meta_box'
+    ),
+    'article_ID' => array(
+        'id' => 'this-article-id',
+        'title' => 'ID-ul Articolului',
+        'page' => 'post',
+        'context' => 'side',
+        'priority' => 'high',
+        'callback'=> 'rcm_show_article_ID_meta_box'
     )
 
 );
@@ -224,19 +232,24 @@ function rcm_add_meta_boxes(){
 }
 
 function rcm_show_tv_schedule_meta_box(){
-    global $tk_meta_boxes, $post;
-    $m = $tk_meta_boxes['tv_schedule'];
-    if($post->ID): ?>
-
-    ID-ul emisiunii: <strong><?php echo $post->ID; ?></strong>
-
-    <?php endif;
+    rcm_show_ID_meta_box('tv_schedule');
 }
 
+
+function rcm_show_article_ID_meta_box(){
+    rcm_show_ID_meta_box('article_ID');
+}
+
+function rcm_show_ID_meta_box($config){
+    global $tk_meta_boxes, $post;
+    $m = $tk_meta_boxes[$config];
+    if($post->ID): ?>
+    <?php echo @$m['label']? $m['label'] : $m['title']; ?> <strong><?php echo $post->ID; ?></strong>
+    <?php endif;
+}
 
 function rcm_get_match_stadium($match_ID = null){
     null == $match_ID && ( $match_ID = get_the_ID() );
     $stadium = @array_shift( get_the_terms($match_ID, 'stadium') );
     return $stadium ? $stadium->name : get_post_meta($match_ID, 'unde', true);
-
 }

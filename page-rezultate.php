@@ -39,15 +39,21 @@
                     $team = array_shift(get_the_terms($match->ID, 'versus'));
                     $them = $team->description ? $team->description : $team->name;
                     $at_home = ! get_post_meta($match->ID, 'deplasare', true);
+                    $stadium = rcm_get_match_stadium( $match->ID );
 
-
+                    $news_ID = get_post_meta($match->ID, 'id_stire', true);
 
                 ?>
                 <tr>
 
                         <td class=when><?php echo date('d F Y, \O\r\a H:i', strtotime($match->post_date)); ?></td>
-                        <td class=teams><?php echo $at_home? $us : $them; ?> <br> <?php echo $at_home? $them : $us; ?></td>
-                        <td class=where><?php echo get_post_meta($match->ID, 'unde', true); ?></td>
+                        <td class=teams><?php echo $at_home? $us : $them; ?> <br> <?php echo $at_home? $them : $us;
+
+                        if($news_ID):
+                            ?><br>
+                            <a href="<?php echo get_permalink($news_ID); ?>">vezi stirea</a>
+                        <?php endif; ?></td>
+                        <td class=where><?php echo $stadium; ?></td>
                         <td class=trt><?php echo get_post_meta($match->ID, 'tur_retur', true); ?></td>
                         <td class=score><?php echo get_post_meta($match->ID, 'scor', true); ?><div class="at-break">[<?php echo get_post_meta($match->ID, 'scor_pauza', true); ?>]</div></td>
 

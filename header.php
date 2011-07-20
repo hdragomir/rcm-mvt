@@ -133,11 +133,11 @@ if($match_query->have_posts()):
 
         <article>
             <div class="who">
-                <?php $us = 'RCM Universitatea de Vest Timisoara';
+                <?php
+                    $us = 'RCM Universitatea de Vest Timisoara';
                     $them = array_shift(get_the_terms($match->ID, 'versus'))->name;
                     $at_home = ! get_post_meta($match->ID, 'deplasare', true);
-                    $stadium = @array_shift( get_the_terms($match->ID, 'stadium') );
-                    $stadium and ( $stadium = $stadium->name ) or $stadium = get_post_meta($match->ID, 'unde', true);
+                    $stadium = rcm_get_match_stadium( $match->IDs );
                 ?>
                 <span class="host"><?php echo $at_home ? $us : $them; ?></span>
                 <span class="vs">vs.</span>
