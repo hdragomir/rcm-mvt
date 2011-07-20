@@ -233,6 +233,13 @@ ul.linker{ font-size: 18px; margin-left: 0; }
     ul.linker li{ margin-bottom: 8px; list-style: none; }
         ul.linker li a:after{ content: attr(title); display: inline-block; color: #7f7f7f; font-style: italic; text-decoration: none; margin-left: 10px; font-size: 16px; }
 
+.page-slug-regulile-jocului-de-rugby #wrap .post-content a{
+    font-size: 18px; display: block; margin-bottom: 8px;
+}
+
+.page-slug-regulile-jocului-de-rugby #wrap .post-content a:after{
+    content: attr(title); display: inline-block; color: #7f7f7f; font-style: italic; text-decoration: none; margin-left: 10px; font-size: 16px;
+}
 
 .player-list{margin-right: -25px;}
 

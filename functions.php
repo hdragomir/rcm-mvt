@@ -248,6 +248,17 @@ function rcm_show_ID_meta_box($config){
     <?php endif;
 }
 
+
+add_filter('body_class', 'rcm_body_class');
+function rcm_body_class($list){
+    global $post;
+    if(is_page()){
+        $list[] = "page-slug-{$post->post_name}";
+    }
+
+    return $list;
+}
+
 function rcm_get_match_stadium($match_ID = null){
     null == $match_ID && ( $match_ID = get_the_ID() );
     $stadium = @array_shift( get_the_terms($match_ID, 'stadium') );
