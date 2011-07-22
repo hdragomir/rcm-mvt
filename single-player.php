@@ -10,6 +10,7 @@
         <h1><?php the_title(); ?></h1>
 
         <div class="g_50 post-content">
+            <h2><?php echo get_post_meta(get_the_ID(), 'post', true); ?></h2>
                 <?php the_content(); ?>
         </div>
 

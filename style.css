@@ -245,9 +245,9 @@ ul.linker{ font-size: 18px; margin-left: 0; }
 
 .player-list .player{ float: left; width: 290px; height: 290px; margin-right: 25px; margin-bottom: 25px; }
 
-    #wrap .player-list .player a{ position: relative; width: 290px; height: 290px; display: block; text-decoration: none; }
-        .player-list .player a b{ position: absolute; left: 10px; background-color: #592f9d; bottom: 10px; width: 250px; padding: 15px; height: 50px;
-                text-align: right; color: #fff; display: block;
+    #wrap .player-list .player a{ position: relative; width: 290px; height: 290px; display: block; text-decoration: none; text-align: center; }
+        .player-list .player a b{ position: absolute; left: 10px; background-color: #592f9d; bottom: 20px; width: 250px; padding: 15px; height: 50px;
+                text-align: right; color: #fff; display: block; opacity: .6;
                 transition: all .2s; -o-transition: all .2s; -webkit-transition: all .2s; -moz-transition: all .2s; -ms-transition: all .2s;
             }
             .player-list .player a b span{ display: block; padding: 4px 0; }
@@ -262,13 +262,13 @@ ul.linker{ font-size: 18px; margin-left: 0; }
                 transition: all .2s; -o-transition: all .2s; -webkit-transition: all .2s; -moz-transition: all .2s; -ms-transition: all .2s;
             }
 
-            .player-list .player a:hover b{ background: #01b0f0; color: #fff; }
+            .player-list .player a:hover b{ background: #01b0f0; color: #fff; opacity: 1; }
 
             .player-list .player a:hover b .name{ border-color: #01b0f0 }
             .player-list .player a:hover b:before{ background: #0191c6; }
 
 
-.single .attachment-player-thumbnail{ width: 290px; margin: 20px auto 0; display: block; }
+.single .attachment-player-thumbnail{ max-width: 290px; margin: 20px auto 0; display: block; }
 
 
 .panes{ margin-top: 50px; }
@@ -314,12 +314,15 @@ ul.linker{ font-size: 18px; margin-left: 0; }
             .panes .pane li .nth{ font-weight: normal; display: inline-block; width: 15px;}
 
         .panes .pane td.nth{ width: 45px; text-align: right; padding-right: 5px; font-weight: normal; }
-        .panes.fat .pane .when{ width: 135px; text-align: right; padding-right: 15px; padding-left: 10px; font-weight: normal; font-size: 12px; }
+        .panes.fat .pane .when{ width: 155px; text-align: right; padding-right: 15px; padding-left: 10px; font-weight: normal; font-size: 12px; }
+        .panes.fat .pane .step{ width: 55px; padding-right: 15px; padding-left: 15px; font-weight: normal; font-size: 12px; }
 
         .panes .pane td.teams{ line-height: 24px; }
             #wrap .panes .pane td.teams a{ color: #aaa; font-size: 12px; font-weight: normal; }
                 #wrap .panes .pane td.teams a:hover{ color: #fff; }
         .panes .pane td.where{ width: 200px; }
+
+            #wrap .panes .pane td.where a{ color: #fff; }
 
         .panes.fat .pane  .score{ line-height: 24px;}
         .panes.fat .pane  .score .at-break{ font-weight: normal; font-size: 12px; }

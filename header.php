@@ -14,7 +14,7 @@
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/style.css?v=2">
+	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/style.css?v=.3">
 
 	<script src="<?php echo get_template_directory_uri(); ?>/js/libs/modernizr-1.7.min.js"></script>
 </head>
@@ -43,7 +43,7 @@
 
         <div class="slide">
 
-            <img src="<?php echo get_template_directory_uri(); ?>/slides/01.jpg" alt="" />
+            <img src="<?php echo get_template_directory_uri(); ?>/slides/02.jpg" alt="" />
             <div class="text-wrap">
                 <div class="text">Respect</div>
             </div>
@@ -52,7 +52,7 @@
 
         <div class="slide">
 
-            <img src="<?php echo get_template_directory_uri(); ?>/slides/01.jpg" alt="" />
+            <img src="<?php echo get_template_directory_uri(); ?>/slides/03.jpg" alt="" />
             <div class="text-wrap">
                 <div class="text">Loialitate</div>
             </div>
@@ -61,7 +61,7 @@
 
         <div class="slide">
 
-            <img src="<?php echo get_template_directory_uri(); ?>/slides/01.jpg" alt="" />
+            <img src="<?php echo get_template_directory_uri(); ?>/slides/04.jpg" alt="" />
             <div class="text-wrap">
                 <div class="text">Ofensiva</div>
             </div>
@@ -70,7 +70,7 @@
 
         <div class="slide">
 
-            <img src="<?php echo get_template_directory_uri(); ?>/slides/01.jpg" alt="" />
+            <img src="<?php echo get_template_directory_uri(); ?>/slides/05.jpg" alt="" />
             <div class="text-wrap">
                 <div class="text">Indemare</div>
             </div>
@@ -79,7 +79,7 @@
 
         <div class="slide">
 
-            <img src="<?php echo get_template_directory_uri(); ?>/slides/01.jpg" alt="" />
+            <img src="<?php echo get_template_directory_uri(); ?>/slides/06.jpg" alt="" />
             <div class="text-wrap">
                 <div class="text">Fair-play</div>
             </div>
@@ -88,7 +88,7 @@
 
         <div class="slide">
 
-            <img src="<?php echo get_template_directory_uri(); ?>/slides/01.jpg" alt="" />
+            <img src="<?php echo get_template_directory_uri(); ?>/slides/07.jpg" alt="" />
             <div class="text-wrap">
                 <div class="text">Onoare</div>
             </div>
@@ -97,7 +97,7 @@
 
         <div class="slide">
 
-            <img src="<?php echo get_template_directory_uri(); ?>/slides/01.jpg" alt="" />
+            <img src="<?php echo get_template_directory_uri(); ?>/slides/08.jpg" alt="" />
             <div class="text-wrap">
                 <div class="text">Control</div>
             </div>
@@ -106,7 +106,7 @@
 
         <div class="slide">
 
-            <img src="<?php echo get_template_directory_uri(); ?>/slides/01.jpg" alt="" />
+            <img src="<?php echo get_template_directory_uri(); ?>/slides/09.jpg" alt="" />
             <div class="text-wrap">
                 <div class="text">Posesie</div>
             </div>
@@ -129,7 +129,7 @@ if($match_query->have_posts()):
 
 <section id="next-match-push">
     <div class="cc">
-        <div class="title">Următorul Meci:</div>
+        <div class="title">Următorul meci:</div>
 
         <article>
             <div class="who">
@@ -137,13 +137,37 @@ if($match_query->have_posts()):
                     $us = 'RCM Universitatea de Vest Timisoara';
                     $them = array_shift(get_the_terms($match->ID, 'versus'))->name;
                     $at_home = ! get_post_meta($match->ID, 'deplasare', true);
-                    $stadium = rcm_get_match_stadium( $match->IDs );
+                    $stadium = rcm_get_match_stadium( $match->ID );
+
                 ?>
                 <span class="host"><?php echo $at_home ? $us : $them; ?></span>
                 <span class="vs">vs.</span>
                 <span class="guest"><?php echo $at_home ? $them : $us; ?></span>
             </div>
-            <div class="meta"><?php echo date('d F Y, \O\r\a H:i', strtotime($match->post_date)); ?><span class="slash">/</span> <?php echo $stadium; ?></div>
+            <div class="meta"><?php echo date('d F Y, \O\r\a H:i', strtotime($match->post_date)); ?><span class="slash">/</span> <?php echo $stadium; ?>
+            <?php
+                if($tv_show_id = get_post_meta($match->ID, 'transmisiune_tv', true)):
+                    if(is_numeric($tv_show_id)):
+                    $tv_show = get_post($tv_show_id);
+                        if($tv_show):
+                            $program = array_shift( get_the_terms($tv_show->ID, 'tv_program') ); ?>
+
+                            <span class="slash">/</span> <?php echo rcm_term_name($program); ?>
+
+
+                    <?php
+                        endif;
+
+
+                    else: ?>
+
+                    <span class="slash">/</span><?php echo $tv_show_id; ?>
+
+                    <?php
+
+                    endif;
+                endif; ?>
+            </div>
 
         </article>
         <a href="<?php to_page('echipa/calendar-meciuri'); ?>" class="cta">Vezi Calendarul de Meciuri &raquo;</a>

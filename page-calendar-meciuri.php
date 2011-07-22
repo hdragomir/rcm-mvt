@@ -26,18 +26,25 @@
                     <a class=to-facebook rel=external href="<?php rcm_the_facebook_event_link(); ?>">vezi pe Facebook</a>
                 <?php endif; ?>
 
-                <?php if($tv_show_id = get_post_meta($match->ID, 'transmisiune_tv', true)):
+                <?php
+                if($tv_show_id = get_post_meta($match->ID, 'transmisiune_tv', true)):
                     if(is_numeric($tv_show_id)):
                     $tv_show = get_post($tv_show_id);
-                    if($tv_show):
-                        $program = array_shift( get_the_terms($tv_show->ID, 'tv_program') ); ?>
+                        if($tv_show):
+                            $program = array_shift( get_the_terms($tv_show->ID, 'tv_program') ); ?>
 
-                        Transmis pe <?php echo rcm_term_name($program); ?>
+                            Transmis pe <?php echo rcm_term_name($program); ?>
 
 
-                <?php
-                    else: ;
-                    endif;
+                    <?php
+                        endif;
+
+
+                    else: ?>
+
+                    Transmis pe <?php echo $tv_show_id; ?>
+
+                    <?php
 
                     endif;
                 endif; ?>

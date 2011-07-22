@@ -18,7 +18,17 @@
 
         <h1>Jucatorii Echipei</h1>
 
-        <?php foreach( array('A' => 'Hello', 'B' => 'Bubu') as $_post => $_post_nicename):
+        <?php foreach( array(
+                             'Linia I (pilier)' => 'Linia I (pilier)',
+                             'Linia I (taloneur)' => 'Linia I (taloneur)',
+                             'Linia II' => 'Linia II',
+                             'Linia III (flanker)' => 'Linia III (flanker)',
+                             'Linia III (Nr. 8)' => 'Linia III (Nr. 8)',
+                             'Mijlocaș la grămadă' => 'Mijlocaș la grămadă',
+                             'Aripă 3/4' => 'Aripă 3/4',
+                             'Centru 3/4' => 'Centru 3/4',
+                             'Fundaș' => 'Fundaș'
+                             ) as $_post => $_post_nicename):
 
         $posts = new WP_Query('post_type=player&posts_per_page=-1&meta_key=post&meta_value=' . $_post);
 
@@ -30,8 +40,8 @@
             <div class="player">
                 <a href="<?php the_permalink(); ?>">
                     <?php the_post_thumbnail('player-thumbnail'); ?>
-                    <b><span class="name"><?php the_title(); ?></span>
-                        <span class="position"><?php echo get_post_meta(get_the_ID(), 'pozitie', true); ?></span></b>
+                    <b><span class="name" style="border: none;"><?php the_title(); ?></span>
+                        <span class="position" style="display: none"><?php echo $_post_nicename; ?></span></b>
                 </a>
             </div>
 

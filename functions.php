@@ -14,13 +14,21 @@ function rcm_init(){
 
 
     add_image_size('page-thumbnail', 940, 240, true);
-    add_image_size('player-thumbnail', 290, 290, true);
+    add_image_size('player-thumbnail', 290, 290, false);
 
     register_post_type('player', array(
         'labels' => array('name' => 'Jucători',
                           'singular_name' => 'Jucător'),
         'public' => true,
         'rewrite' => array('slug' => 'jucator', 'with_front' => true),
+        'supports' => array('title', 'thumbnail', 'excerpt', 'editor', 'custom-fields', 'post-formats', 'post-thumbnails')
+    ));
+
+    register_post_type('staff', array(
+        'labels' => array('name' => 'Membrii',
+                          'singular_name' => 'Membru'),
+        'public' => true,
+        'rewrite' => array('slug' => 'membrii', 'with_front' => true),
         'supports' => array('title', 'thumbnail', 'excerpt', 'editor', 'custom-fields', 'post-formats', 'post-thumbnails')
     ));
 
@@ -93,6 +101,7 @@ function rcm_init(){
     register_taxonomy_for_object_type('versus', 'tv_schedule');
     register_taxonomy_for_object_type('league', 'tv_schedule');
 
+
     register_taxonomy('tv_program', 'tv_schedule', array(
         'labels' => array(
             'name' => 'Programe',
@@ -100,6 +109,24 @@ function rcm_init(){
             'choose_from_most_used' => 'Alege dintre cele mai folosite'
         )
     ));
+
+
+    if('please' ==@ $_GET['regenerate_thumbs']){
+        ini_set('memory_limit', '2048M');
+        foreach(query_posts('post_type=player&posts_per_page=-1') as $post){
+
+
+
+                foreach(get_children('post_type=attachment&post_mime_type=image&post_parent=' . $post->ID) as $image){
+
+                    set_post_thumbnail($post->ID, $image->ID);
+                    break;
+
+                }
+
+        }
+        wp_reset_query();
+    }
 
 }
 
@@ -263,4 +290,10 @@ function rcm_get_match_stadium($match_ID = null){
     null == $match_ID && ( $match_ID = get_the_ID() );
     $stadium = @array_shift( get_the_terms($match_ID, 'stadium') );
     return $stadium ? $stadium->name : get_post_meta($match_ID, 'unde', true);
+}
+
+function rcm_get_match_stadium_link($match_ID = null){
+    null == $match_ID && ( $match_ID = get_the_ID() );
+    $stadium = @array_shift( get_the_terms($match_ID, 'stadium') );
+    return $stadium && $stadium->description ? $stadium->description : null;
 }

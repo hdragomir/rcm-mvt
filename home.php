@@ -51,7 +51,8 @@
                 <h3>Rezultate</h3>
             </div>
             <ul><?php $match_query = new WP_Query('post_type=matches&numberposts=4&order=desc&meta_key=scor');
-                foreach($match_query->get_posts() as $match): ?>
+                $i = 0;
+                foreach($match_query->get_posts() as $match): if($i == 4) break; ++$i; ?>
 
                 <?php $us = 'RCM Universitatea de Vest Timisoara';
                     $them = array_shift(get_the_terms($match->ID, 'versus'))->name;

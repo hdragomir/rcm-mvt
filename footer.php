@@ -19,7 +19,7 @@
 
 
             <div id="footercopy">© RCM MVT Universitatea de Vest Timisoara 2011. Toate drepturile rezervate.</div>
-            <div id="footermisc"><a href="<?php to_page('contact'); ?>">Contact</a> | <a href="http://rugby-timisoara.ro/webmail" rel=external>Login</a></div>
+            <div id="footermisc"><a href="<?php to_page('contact'); ?>">Contact</a> | <a href="http://rugby-timisoara.ro/webmail" rel=external>Webmail</a></div>
 
         </div>
 
