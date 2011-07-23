@@ -82,7 +82,7 @@ function rcm_init(){
         'labels' => array(
             'name' => 'Echipe',
             'singular_name' => 'Echipa',
-            'choose_from_most_used' => 'Alege dintre cei mai folositi'
+            'choose_from_most_used' => 'Alege dintre cele mai folosite'
         )
     ));
 
@@ -287,13 +287,13 @@ function rcm_body_class($list){
 }
 
 function rcm_get_match_stadium($match_ID = null){
-    null == $match_ID && ( $match_ID = get_the_ID() );
+    ( null == $match_ID ) && ( $match_ID = get_the_ID() );
     $stadium = @array_shift( get_the_terms($match_ID, 'stadium') );
     return $stadium ? $stadium->name : get_post_meta($match_ID, 'unde', true);
 }
 
 function rcm_get_match_stadium_link($match_ID = null){
-    null == $match_ID && ( $match_ID = get_the_ID() );
+    ( null == $match_ID ) && ( $match_ID = get_the_ID() );
     $stadium = @array_shift( get_the_terms($match_ID, 'stadium') );
     return $stadium && $stadium->description ? $stadium->description : null;
 }

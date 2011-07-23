@@ -25,10 +25,10 @@
             <h1><?php echo $_post_nicename; ?></h1>
             <?php while($posts->have_posts()): $posts->the_post(); ?>
             <div class="player">
-                <a href="<?php the_permalink(); ?>">
+                <a>
                     <?php the_post_thumbnail('player-thumbnail'); ?>
                     <b><span class="name"><?php the_title(); ?></span>
-                        <span class="position"><?php echo $_post_nicename; ?></span></b>
+                        <span class="position"><?php echo get_post_meta(get_the_ID(), 'post', true); ?></span></b>
                 </a>
             </div>
 

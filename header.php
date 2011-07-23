@@ -72,7 +72,7 @@
 
             <img src="<?php echo get_template_directory_uri(); ?>/slides/05.jpg" alt="" />
             <div class="text-wrap">
-                <div class="text">Indemare</div>
+                <div class="text">Indemanare</div>
             </div>
 
         </div>
