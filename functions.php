@@ -297,3 +297,6 @@ function rcm_get_match_stadium_link($match_ID = null){
     $stadium = @array_shift( get_the_terms($match_ID, 'stadium') );
     return $stadium && $stadium->description ? $stadium->description : null;
 }
+
+
+define('PRESS_RELEASE_CATEGORY', get_category_by_slug('comunicate-de-presa')->cat_ID);
