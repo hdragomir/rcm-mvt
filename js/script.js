@@ -45,4 +45,9 @@ $(function(){
 
     })();
 
+    $('a[rel~=external]').live('click', function(ev){
+        ev.preventDefault();
+        window.open(this.href);
+    })
+
 });
