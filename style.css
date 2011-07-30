@@ -151,7 +151,7 @@ footer{ margin-top: 120px; }
 .home footer{ margin-top: 0; }
     footer .top{ position: relative; display: none; }
     #partners{
-        height: 164px; width: 940px; background-image: url('img/partners.jpg');
+        height: 95px; width: 940px; background-image: url('img/partners.jpg');
     }
 
 
