@@ -38,7 +38,7 @@
 
                 <h2><?php the_title(); ?></h2>
 
-                <div class="meta"><?php echo date('d F Y, \O\r\a H:i', strtotime($match->post_date)); ?><br>
+                <div class="meta"><?php echo apply_filters('the_date', date('d F Y, \O\r\a H:i', strtotime($match->post_date))); ?><br>
 
                 <?php if($stadium_link): ?>
                     <a target=_blank href="<?php echo $stadium_link; ?>"><?php echo $stadium; ?></a>

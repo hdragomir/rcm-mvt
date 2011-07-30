@@ -17,12 +17,35 @@
         <div class="space">&nbsp;</div>
 
         <?php
-        $posts = new WP_Query('post_type=staff&posts_per_page=-1&meta_key=post');
+        $posts = new WP_Query('post_type=staff&posts_per_page=-1&meta_key=post&staff_category=consiliul de conducere');
 
         if($posts->have_posts()): ?>
 
         <div class="player-list clearfix">
-            <h1><?php echo $_post_nicename; ?></h1>
+            <h1>Consiliul de conducere</h1>
+            <?php while($posts->have_posts()): $posts->the_post(); ?>
+            <div class="player">
+                <a>
+                    <?php the_post_thumbnail('player-thumbnail'); ?>
+                    <b><span class="name"><?php the_title(); ?></span>
+                        <span class="position"><?php echo get_post_meta(get_the_ID(), 'post', true); ?></span></b>
+                </a>
+            </div>
+
+            <?php endwhile; wp_reset_postdata(); wp_reset_query(); ?>
+
+        </div>
+        <?php  endif; ?>
+
+        <div class="space">&nbsp;</div>
+
+        <?php
+        $posts = new WP_Query('post_type=staff&posts_per_page=-1&meta_key=post&staff_category=staff tehnic');
+
+        if($posts->have_posts()): ?>
+
+        <div class="player-list clearfix">
+            <h1>Staff tehnic</h1>
             <?php while($posts->have_posts()): $posts->the_post(); ?>
             <div class="player">
                 <a>

@@ -144,7 +144,7 @@ if($match_query->have_posts()):
                 <span class="vs">vs.</span>
                 <span class="guest"><?php echo $at_home ? $them : $us; ?></span>
             </div>
-            <div class="meta"><?php echo date('d F Y, \O\r\a H:i', strtotime($match->post_date)); ?><span class="slash">/</span> <?php echo $stadium; ?>
+            <div class="meta"><?php echo apply_filters('the_date', date('d F Y, \O\r\a H:i', strtotime($match->post_date))); ?><span class="slash">/</span> <?php echo $stadium; ?>
             <?php
                 if($tv_show_id = get_post_meta($match->ID, 'transmisiune_tv', true)):
                     if(is_numeric($tv_show_id)):

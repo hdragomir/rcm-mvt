@@ -86,6 +86,14 @@ function rcm_init(){
         )
     ));
 
+    register_taxonomy('staff_category', 'staff', array(
+        'labels' => array(
+            'name' => 'Categorie',
+            'singular_name' => 'Categorie',
+            'choose_from_most_used' => 'Alege dintre cele mai folosite'
+        )
+    ));
+
 
     register_post_type('rankings', array(
         'labels' => array(
@@ -300,3 +308,24 @@ function rcm_get_match_stadium_link($match_ID = null){
 
 
 define('PRESS_RELEASE_CATEGORY', get_category_by_slug('comunicate-de-presa')->cat_ID);
+
+add_filter('the_date', 'rcm_set_date_to_ro_RO');
+function rcm_set_date_to_ro_RO($str){
+    return strtr($str, array(
+        'January' => 'ianuarie',
+        'February' => 'februarie',
+        'March' => 'martie',
+        'April' => 'aprilie',
+        'May' => 'mai',
+        'June' => 'iunie',
+        'July' => 'iulie',
+        'August' => 'august',
+        'September' => 'septembrie',
+        'October' => 'octombrie',
+        'october' => 'octombrie',
+        'November' => 'noiembrie',
+        'December' => 'decembrie'
+
+
+    ));
+}
