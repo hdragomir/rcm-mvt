@@ -329,3 +329,8 @@ function rcm_set_date_to_ro_RO($str){
 
     ));
 }
+
+add_filter('the_content', 'rcm_the_content_filter');
+function rcm_the_content_filter($content){
+    return str_replace('Echipa anterioara', 'Echipa de formare', $content);
+}
