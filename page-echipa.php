@@ -24,7 +24,8 @@
                              'Linia II' => 'Linia II',
                              'Linia III (flanker)' => 'Linia III (flanker)',
                              'Linia III (Nr. 8)' => 'Linia III (Nr. 8)',
-                             'Mijlocaș la grămadă' => 'Mijlocaș la grămadă',
+                             'Mijlocas la gramada' => 'Mijlocaș la grămadă',
+                             'Mijlocas la deschidere' => 'Mijlocaș la deschidere',
                              'Aripă 3/4' => 'Aripă 3/4',
                              'Centru 3/4' => 'Centru 3/4',
                              'Fundaș' => 'Fundaș'
