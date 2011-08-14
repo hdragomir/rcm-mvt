@@ -48,6 +48,9 @@ $(function(){
     $('a[rel~=external]').live('click', function(ev){
         ev.preventDefault();
         window.open(this.href);
-    })
+    });
+    
+    $('.panes .pane tr:nth-child(even)').addClass('even');
+    $('.panes .pane li:nth-child(odd)').addClass('odd');
 
 });

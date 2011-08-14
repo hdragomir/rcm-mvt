@@ -309,7 +309,15 @@ ul.linker{ font-size: 18px; margin-left: 0; }
                 #wrap .panes .pane tr.us td{ background-color: rgba(255,255,255, .1); }
 
 
-            .panes .pane li:nth-child(odd), .panes .pane tr:nth-child(even) td{ background-color: rgba(0,0,0, .3) }
+            .panes .pane li:nth-child(odd),
+            .panes .pane tr:nth-child(even) td{
+                background-color: #130835; background-color: rgba(0,0,0, .3) }
+            
+            .no-rgba .panes .pane tr.even td,
+            .no-rgba .panes .pane li.odd{
+                background-color: #130835!important;
+            }
+
 
             .panes .pane li .nth{ font-weight: normal; display: inline-block; width: 15px;}
 
