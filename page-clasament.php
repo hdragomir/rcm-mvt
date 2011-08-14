@@ -4,7 +4,6 @@
     <article class="full clearfix">
         <h1><?php the_title(); ?></h1>
 
-
         <?php if($content = get_the_content()): ?>
         <div class="post-content"><?php echo $content; ?></div>
         <div class="space">&nbsp;</div>
@@ -12,9 +11,16 @@
 
 
         <div class="panes full">
-        <?php $leagues = get_terms('league');
+        <?php
+            $match_query = new WP_Query('post_type=rankings&numberposts=8&order=desc&meta_key=puncte&orderby=meta_value');
+            $matches = $match_query->get_posts();
+            $leagues = get_terms('league');
+            global $league;
 
-            foreach($leagues as $league ): ?>
+            foreach($leagues as $league ):
+                $reduced = array_filter($matches, 'reduce_by_global_league');
+                if(! $reduced) continue;
+            ?>
 
             <div class="pane">
                 <div class="top">
@@ -39,8 +45,7 @@
                     </tr>
             <?php
 
-            $match_query = new WP_Query('post_type=rankings&numberposts=8&order=desc&meta_key=puncte&orderby=meta_value&league=' . $league->term_ID );
-                foreach($match_query->get_posts() as $nth => $rank): ?>
+                foreach($reduced as $nth => $rank): ?>
 
                 <?php $team = array_shift(get_the_terms($rank->ID, 'versus'));
                     $is_us = stristr($team->name, 'timi');

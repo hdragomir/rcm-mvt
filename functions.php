@@ -334,3 +334,8 @@ add_filter('the_content', 'rcm_the_content_filter');
 function rcm_the_content_filter($content){
     return str_replace('Echipa anterioara', 'Echipa de formare', $content);
 }
+
+function reduce_by_global_league($match){
+        global $league;
+        return is_object_in_term($match->ID, 'league', $league);
+}

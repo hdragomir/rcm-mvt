@@ -16,7 +16,7 @@
         <h1>Stiri / Evenimente / Noutati</h1>
 
         <div class="article-list clearfix">
-            <?php $news = new WP_Query('numberposts=3&category=-' . PRESS_RELEASE_CATEGORY);
+            <?php $news = new WP_Query('numberposts=3');
             if($news->have_posts()):
                 foreach($news->get_posts() as $news_item): setup_postdata($news_item); $news->the_post();
             ?>

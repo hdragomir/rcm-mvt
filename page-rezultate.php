@@ -12,11 +12,19 @@
 
 
         <div class="panes full fat">
-        <?php $leagues = get_terms('league');
+        <?php
+        
+        
+        $match_query = new WP_Query('post_type=matches&numberposts=-1&order=desc&meta_key=scor' );
+        $matches = $match_query->get_posts();
+        $leagues = array_reverse(get_terms('league'));
+        global $league;
+        foreach($leagues as $league ):
+            $reduced = array_filter($matches, 'reduce_by_global_league');
+            if(! $reduced) continue;
+            ?>
 
-            foreach($leagues as $league ): ?>
-
-            <div class="pane">
+            <div class="pane" style="margin-left: 0;">
                 <div class="top">
                     <h3><?php echo $league->description? $league->description : $league->name; ?></h3>
                 </div>
@@ -32,9 +40,8 @@
                         <th class=score>Scor</th>
                     </tr>
             <?php
-
-                $match_query = new WP_Query('post_type=matches&numberposts=8&order=desc&meta_key=scor&league=' . $league->term_ID );
-                foreach($match_query->get_posts() as $nth => $match):
+                
+                foreach($reduced as $nth => $match):
 
                     $us = 'RCM Universitatea de Vest Timisoara';
                     $team = array_shift(get_the_terms($match->ID, 'versus'));
