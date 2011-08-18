@@ -15,6 +15,7 @@ function rcm_init(){
 
     add_image_size('page-thumbnail', 940, 240, true);
     add_image_size('player-thumbnail', 290, 290, false);
+    add_image_size('partner-thumb', 120, 70, false);
 
     register_post_type('player', array(
         'labels' => array('name' => 'Jucători',
