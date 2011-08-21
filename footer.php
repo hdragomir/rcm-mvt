@@ -1,8 +1,10 @@
 
 <footer>
 
-    <div class="top cc"><s></s>
-        <section id="partners" class=ir></section>
+    <div class="top cc">
+        <div id="partners">
+        <?php get_template_part('main-partners'); ?>
+        </div>
     </div><div class="bottom">
 
         <div class="cc">

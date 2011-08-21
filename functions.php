@@ -15,7 +15,7 @@ function rcm_init(){
 
     add_image_size('page-thumbnail', 940, 240, true);
     add_image_size('player-thumbnail', 290, 290, false);
-    add_image_size('partner-thumb', 120, 70, false);
+    add_image_size('partner-thumb', 120, 120, false);
 
     register_post_type('player', array(
         'labels' => array('name' => 'Jucători',
@@ -120,22 +120,6 @@ function rcm_init(){
     ));
 
 
-    if('please' ==@ $_GET['regenerate_thumbs']){
-        ini_set('memory_limit', '2048M');
-        foreach(query_posts('post_type=player&posts_per_page=-1') as $post){
-
-
-
-                foreach(get_children('post_type=attachment&post_mime_type=image&post_parent=' . $post->ID) as $image){
-
-                    set_post_thumbnail($post->ID, $image->ID);
-                    break;
-
-                }
-
-        }
-        wp_reset_query();
-    }
 
 }
 
