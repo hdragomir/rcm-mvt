@@ -15,7 +15,7 @@
         <?php
         
         
-        $match_query = new WP_Query('post_type=matches&numberposts=-1&order=desc&meta_key=scor' );
+        $match_query = new WP_Query('post_type=matches&posts_per_page=-1&order=desc&meta_key=scor' );
         $matches = $match_query->get_posts();
         $leagues = array_reverse(get_terms('league'));
         global $league;
@@ -24,12 +24,12 @@
             if(! $reduced) continue;
             ?>
 
-            <div class="pane" style="margin-left: 0;">
+            <div class="pane collapse" style="margin-left: 0;">
                 <div class="top">
                     <h3><?php echo $league->description? $league->description : $league->name; ?></h3>
                 </div>
 
-
+                <div class="collapse-me">
                 <table>
                     <tr>
                         <th class="step">Etapa</th>
@@ -69,12 +69,18 @@
                         <?php endif; ?>
                         </td>
                         <td class=trt><?php echo get_post_meta($match->ID, 'tur_retur', true); ?></td>
-                        <td class=score><?php echo get_post_meta($match->ID, 'scor', true); ?><div class="at-break">[<?php echo get_post_meta($match->ID, 'scor_pauza', true); ?>]</div></td>
+                        <td class=score><?php echo get_post_meta($match->ID, 'scor', true);
+                        $at_break = get_post_meta($match->ID, 'scor_pauza', true);
+                        if($at_break):
+                        ?><div class="at-break">[<?php echo $at_break; ?>]</div>
+                        <?php endif; ?>
+                        </td>
 
                 </tr>
 
                 <?php endforeach; ?>
                 </table>
+                </div>
             </div>
 
         <?php endforeach; ?>

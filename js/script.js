@@ -52,5 +52,11 @@ $(function(){
     
     $('.panes .pane tr:nth-child(even)').addClass('even');
     $('.panes .pane li:nth-child(odd)').addClass('odd');
+    
+    $('.panes .pane.collapse').each(function(){
+        $(this).find('.collapse-me').slideUp();
+    }).delegate('.top', 'click', function(ev){
+        $(this).parents('.pane').find('.collapse-me').slideToggle('fast');
+    }).find('.top').css('cursor', 'pointer');
 
 });
