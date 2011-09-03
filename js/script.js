@@ -53,10 +53,16 @@ $(function(){
     $('.panes .pane tr:nth-child(even)').addClass('even');
     $('.panes .pane li:nth-child(odd)').addClass('odd');
     
-    $('.panes .pane.collapse').each(function(){
+    $('.collapse').filter(':not(:first)').each(function(){
         $(this).find('.collapse-me').slideUp();
-    }).delegate('.top', 'click', function(ev){
-        $(this).toggleClass('collapser').parents('.pane').find('.collapse-me').slideToggle('fast');
-    }).find('.top').addClass('collapser');
+        if(! $(this).is('.pane')){
+            $(this).find('.pane').css('height', 'auto');
+        }
+    }).find('.top').addClass('collapser').end()
+    .end().delegate('.top', 'click', function(ev){
+        var $this = $(this);
+        $this.toggleClass('collapser').parents('.collapse').find('.collapse-me').slideToggle('fast');
+        $this.parents('.pane').css('height', 'auto');
+    });
 
 });
