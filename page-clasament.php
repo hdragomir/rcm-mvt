@@ -10,7 +10,7 @@
         <?php endif; ?>
 
 
-        <div class="panes full">
+        
         <?php
             $match_query = new WP_Query('post_type=rankings&numberposts=8&order=desc&meta_key=puncte&orderby=meta_value');
             $matches = $match_query->get_posts();
@@ -21,13 +21,15 @@
                 $reduced = array_filter($matches, 'reduce_by_global_league');
                 if(! $reduced) continue;
             ?>
+            
+            <div class="panes full collapse">
 
-            <div class="pane">
+            <div class="pane" style="margin-left: 0;">
                 <div class="top">
                     <h3><?php echo $league->description? $league->description : $league->name; ?></h3>
                 </div>
 
-
+                <div class="collapse-me">
                 <table>
                     <tr>
 
@@ -67,10 +69,11 @@
 
                 <?php endforeach; ?>
                 </table>
+                </div>
             </div>
-
-        <?php endforeach; ?>
         </div>
+        <?php endforeach; ?>
+        
 
 
 
