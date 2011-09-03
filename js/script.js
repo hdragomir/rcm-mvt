@@ -54,15 +54,18 @@ $(function(){
     $('.panes .pane li:nth-child(odd)').addClass('odd');
     
     $('.collapse').filter(':not(:first)').each(function(){
-        $(this).find('.collapse-me').slideUp();
-        if(! $(this).is('.pane')){
-            $(this).find('.pane').css('height', 'auto');
+        var $this = $(this);
+        $this.find('.collapse-me').slideUp();
+        if(! $this.is('.pane')){
+            $this.find('.pane').css('height', 'auto');
         }
     }).find('.top').addClass('collapser').end()
     .end().delegate('.top', 'click', function(ev){
         var $this = $(this);
         $this.toggleClass('collapser').parents('.collapse').find('.collapse-me').slideToggle('fast');
-        $this.parents('.pane').css('height', 'auto');
+        if(! $this.is('.pane')){
+            $this.parents('.pane').css('height', 'auto');
+        }
     });
 
 });
