@@ -284,6 +284,11 @@ ul.linker{ font-size: 18px; margin-left: 0; }
         .panes .pane .bottom{position: absolute; bottom: 0; height: 67px; border-top: 1px solid #140d34; width: 460px; }
 
         .panes .pane .top{ padding: 20px 35px; height: 45px; }
+        .panes .pane .top.collapser{ cursor: pointer; }
+        .panes .pane .top.collapser:before{
+            background: url('img/arrow-down-white.png') 0 0 no-repeat;
+            display: inline-block; width: 16px; height: 14px; float: right; content: " ";
+        }
 
         .panes .pane h3{ color: #fff; font-size: 24px; font-weight: bold; }
 
