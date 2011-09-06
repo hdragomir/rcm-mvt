@@ -12,7 +12,7 @@
 
         
         <?php
-            $match_query = new WP_Query('post_type=rankings&numberposts=-1&order=desc&meta_key=puncte&orderby=meta_value');
+            $match_query = new WP_Query('post_type=rankings&posts_per_page=-1&order=desc&meta_key=puncte&orderby=meta_value');
             $matches = $match_query->get_posts();
             $leagues = get_terms('league');
             global $league;
