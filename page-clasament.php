@@ -12,7 +12,7 @@
 
         
         <?php
-            $match_query = new WP_Query('post_type=rankings&numberposts=8&order=desc&meta_key=puncte&orderby=meta_value');
+            $match_query = new WP_Query('post_type=rankings&numberposts=-1&order=desc&meta_key=puncte&orderby=meta_value');
             $matches = $match_query->get_posts();
             $leagues = get_terms('league');
             global $league;
@@ -47,7 +47,7 @@
                     </tr>
             <?php
 
-                foreach($reduced as $nth => $rank): ?>
+                foreach(array_values($reduced) as $nth => $rank): ?>
 
                 <?php $team = array_shift(get_the_terms($rank->ID, 'versus'));
                     $is_us = stristr($team->name, 'timi');
