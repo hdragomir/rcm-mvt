@@ -81,7 +81,7 @@
             </div>
             <ol><?php
 
-                $match_query = new WP_Query('post_type=rankings&numberposts=8&order=desc&meta_key=puncte&orderby=meta_value&league=' . $league->term_ID );
+                $match_query = new WP_Query('post_type=rankings&posts_per_page=8&order=desc&meta_key=puncte&orderby=meta_value&league=' . $league->term_ID );
                 foreach($match_query->get_posts() as $nth => $rank): ?>
 
                 <?php $team = array_shift(get_the_terms($rank->ID, 'versus'));
