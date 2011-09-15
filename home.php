@@ -56,12 +56,15 @@
 
                 <?php $us = 'RCM Universitatea de Vest Timisoara';
                     $them = array_shift(get_the_terms($match->ID, 'versus'))->name;
+                    $league = array_shift(get_the_terms($match->ID, 'league'))->name;
+
                     $at_home = ! get_post_meta($match->ID, 'deplasare', true);
                 ?>
-                <li>
+                <li class=now-with-league>
                     <span class="score right"><?php echo get_post_meta($match->ID, 'scor', true); ?></span>
                     <span class="host"><?php echo $at_home ? $us : $them; ?></span>
                     <span class="guest"><?php echo $at_home ? $them : $us; ?></span>
+                    <span class="league"><?php echo $league; ?></span>
                 </li>
 
                 <?php endforeach; ?>

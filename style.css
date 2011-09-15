@@ -285,9 +285,21 @@ ul.linker{ font-size: 18px; margin-left: 0; }
 
         .panes .pane .top{ padding: 20px 35px; height: 45px; }
         .panes .pane .top.collapser{ cursor: pointer; }
-        .panes .pane .top.collapser:before{
+        .collapse .top:before{
             background: url('img/arrow-down-white.png') 0 0 no-repeat;
             display: inline-block; width: 16px; height: 14px; float: right; content: " ";
+            -ms-transform: rotate(180deg);
+            -webkit-transform: rotate(180deg);
+            -moz-transform: rotate(180deg);
+            -o-transform: rotate(180deg);
+            transform: rotate(180deg);
+        }
+        .collapse .top.collapser:before{
+            -ms-transform: none;
+            -webkit-transform: none;
+            -moz-transform: none;
+            -o-transform: none;
+            transform: none;
         }
 
         .panes .pane h3{ color: #fff; font-size: 24px; font-weight: bold; }
@@ -305,8 +317,14 @@ ul.linker{ font-size: 18px; margin-left: 0; }
             .panes.fat .pane td{ padding: 10px 5px; }
 
             .panes .pane ul li{ padding-top: 20px; padding-bottom: 20px; }
+            .panes .pane ul li.now-with-league{ padding-top: 14px; padding-bottom: 14px; }
                 .panes .pane ul li span{ display: block }
                     .panes .pane ul li span.score{ font-size: 18px; padding-top: 10px; }
+                    .panes .pane ul li.now-with-league .league{
+                        font-weight: normal;
+                        font-size: .9em;
+                        opacity: .8;
+                    }
 
             .panes .pane ol li{ line-height: 41px; }
                 .panes .pane ol li.us{ background-color: rgba(255,255,255, .1); }
