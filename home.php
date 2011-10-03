@@ -75,17 +75,27 @@
             </div>
 
 
+
         </div>
+        <?php
+            $match_query = new WP_Query('post_type=rankings&posts_per_page=-1&order=desc&meta_key=puncte&orderby=meta_value');
+            $matches = $match_query->get_posts();
+            $leagues = get_terms('league');
+            global $league;
+
+            foreach($leagues as $league ):
+                $reduced = array_filter($matches, 'reduce_by_global_league');
+                if(! $reduced) continue;
+            ?>
+          
+
         <div class="pane" id=rankings>
-            <?php $league = get_term_by('name', 'SuperLiga CEC', 'league'); ?>
             <div class="top">
                 <h3>Clasament</h3>
                 <p><?php echo $league->description? $league->description : $league->name; ?></p>
             </div>
             <ol><?php
-
-                $match_query = new WP_Query('post_type=rankings&posts_per_page=8&order=desc&meta_key=puncte&orderby=meta_value&league=' . $league->term_ID );
-                foreach($match_query->get_posts() as $nth => $rank): ?>
+                foreach($reduced as $nth => $rank): ?>
 
                 <?php $team = array_shift(get_the_terms($rank->ID, 'versus'));
                     $is_us = stristr($team->name, 'timi');
@@ -105,6 +115,10 @@
             </div>
 
         </div>
+        <?php
+            break;
+        endforeach;
+        ?>
 
 
     </section>
