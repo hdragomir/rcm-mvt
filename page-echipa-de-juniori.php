@@ -14,15 +14,14 @@
         <div class="post-content"><?php echo $content; ?></div>
         <div class="space">&nbsp;</div>
 
+        <?php
+        $posts = new WP_Query('post_type=junior&posts_per_page=-1&meta_key=pozitie');
+        if($posts->have_posts()):
+        ?>
         <h1>Jucatorii Echipei</h1>
         <?php endif; ?>
-
-
-
         <div class="player-list clearfix">
-            <?php
-            $posts = new WP_Query('post_type=junior&posts_per_page=-1&meta_key=pozitie');
-            while($posts->have_posts()): $posts->the_post(); ?>
+            <?php while($posts->have_posts()): $posts->the_post(); ?>
             <div class="player">
                 <a href="<?php the_permalink(); ?>">
                     <?php the_post_thumbnail('player-thumbnail'); ?>
@@ -31,7 +30,9 @@
                 </a>
             </div>
 
-            <?php endwhile; wp_reset_postdata(); wp_reset_query(); ?>
+            <?php endwhile; wp_reset_postdata(); wp_reset_query();
+            endif;
+            ?>
 
 
 
