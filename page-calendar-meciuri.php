@@ -57,7 +57,7 @@
                         if($tv_show):
                             $program = array_shift( get_the_terms($tv_show->ID, 'tv_program') ); ?>
 
-                            Transmis pe <?php echo rcm_term_name($program); ?>
+                            <br /> Transmis pe <?php echo rcm_term_name($program); ?>
 
 
                     <?php
