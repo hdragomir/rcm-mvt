@@ -24,7 +24,7 @@
             ?>
             <article>
 
-                <div class="date"><?php the_date(); ?></div>
+                <div class="date"><?php echo get_the_date(); ?></div>
                 <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
                 <div class="post-text"><?php the_excerpt(); ?></div>
                 <a href="<?php the_permalink(); ?>" class="read-news-cta ir">Citeste Stirea</a>
