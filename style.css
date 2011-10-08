@@ -199,8 +199,9 @@ footer{ margin-top: 120px; }
 
 
 
-.article-list article{ float: left; width: 279px; height: 240px; padding-left: 20px; border-left: 1px solid #d0cfd6;  padding-right: 20px; }
-    .article-list article:first-child{ padding-left: 0; border-left: 0;  }
+.article-list article{ float: left; width: 279px; height: 240px; padding-left: 20px; border-left: 1px solid #d0cfd6;  padding-right: 20px; margin-bottom: 30px;}
+    .article-list article:first-child, .article-list article:nth-child(3n + 1)
+    { padding-left: 0; border-left: 0;  }
     article .date{ color: #594394; text-transform: capitalize; }
     .article-list article h2{ font-size: 18px; line-height: 24px; margin-bottom: 10px; color: #592f9d }
         #wrap .article-list article h2 a{ color: #592f9d; text-decoration: none; }
