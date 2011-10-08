@@ -139,8 +139,9 @@ header{
 
     #next-match-push .cta{ float: left; width: 102px; padding-left: 21px; border-left: 1px solid #5d4884; color: #ffda0e; font-size: 14px; display: block; height: 53px; padding-top: 15px; }
 
-    #next-match-push article { width: 638px; float: left; text-align: center; padding-top: 12px; }
-        #next-match-push article .who { font-size: 18px; color: #ffda0e; margin-bottom: 8px; }
+    #next-match-push article { width: 638px; float: left; text-align: center; padding-top: 0px; }
+    #next-match-push article .league-meta{ color: #aaa; margin-bottom: 5px; font-size: 14px; }
+        #next-match-push article .who { font-size: 18px; color: #ffda0e; margin-bottom: 5px; }
             #next-match-push article .who .vs{ color: #fff; color: rgba(255,255,255, .5); display: inline-block; margin: 0 8px; }
         #next-match-push article .meta{ font-size: 14px; color: white; }
             #next-match-push article .meta .slash{ color: #5d4884; display: inline-block; margin: 0 5px; }

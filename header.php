@@ -132,19 +132,26 @@ if($match_query->have_posts()):
         <div class="title">Următorul meci:</div>
 
         <article>
-            <div class="who">
                 <?php
                     $us = 'RCM Universitatea de Vest Timisoara';
                     $them = array_shift(get_the_terms($match->ID, 'versus'))->name;
                     $at_home = ! get_post_meta($match->ID, 'deplasare', true);
                     $stadium = rcm_get_match_stadium( $match->ID );
+                    $stage = get_post_meta($match->ID, 'etapa', true);
+
+                    $league = @array_shift( get_the_terms($match->ID, 'league') );
+
+                    $preheader = $league->name . ( $stage ?  " / Etapa $stage" : '');
 
                 ?>
+            <div class="league-meta"><?php echo $preheader; ?></div>
+            <div class="who">
+
                 <span class="host"><?php echo $at_home ? $us : $them; ?></span>
                 <span class="vs">vs.</span>
                 <span class="guest"><?php echo $at_home ? $them : $us; ?></span>
             </div>
-            <div class="meta"><?php echo apply_filters('the_date', date('d F Y, \O\r\a H:i', strtotime($match->post_date))); ?><span class="slash">/</span> <?php echo $stadium; ?>
+            <div class="meta"><?php echo apply_filters('the_date', date('d F Y, \o\r\a H:i', strtotime($match->post_date))); ?><span class="slash">/</span> <?php echo $stadium; ?>
             <?php
                 if($tv_show_id = get_post_meta($match->ID, 'transmisiune_tv', true)):
                     if(is_numeric($tv_show_id)):
