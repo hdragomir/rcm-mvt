@@ -48,7 +48,7 @@
         <div class="pane" id=results>
 
             <div class="top">
-                <h3>Rezultate</h3>
+                <h3>Ultimele Rezultate</h3>
             </div>
             <ul><?php $match_query = new WP_Query('post_type=matches&numberposts=4&order=desc&meta_key=scor');
                 $i = 0;
