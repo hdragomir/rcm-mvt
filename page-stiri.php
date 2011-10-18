@@ -18,7 +18,7 @@
         <?php endif; ?>
 
         <div class="article-list clearfix">
-            <?php $news = new WP_Query('numberposts=-1&cat=-' . PRESS_RELEASE_CATEGORY);
+            <?php $news = new WP_Query('posts_per_page=-1&cat=-' . PRESS_RELEASE_CATEGORY);
             if($news->have_posts()):
                 foreach($news->get_posts() as $news_item): setup_postdata($news_item); $news->the_post();
             ?>
