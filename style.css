@@ -364,6 +364,7 @@ ul.linker{ font-size: 18px; margin-left: 0; }
 
         .panes .pane td.games, .panes .pane td.wins, .panes .pane td.draws, .panes .pane td.losses, .panes .pane td.bonus{ width: 80px; font-weight: normal; }
         .panes .pane td.esv{ font-weight: normal; }
+        .panes .pane td.bonus, .panes .pane th.bonus, .panes .pane td.score{ text-align: center; }
 
         .panes .pane th{ padding-bottom: 20px; font-weight: normal; text-align: left; }
 
