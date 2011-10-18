@@ -55,7 +55,7 @@
                 ?>
                 <tr>
                         <td class="step"><?php echo get_post_meta($match->ID, 'etapa', true); ?></td>
-                        <td class=when><?php echo apply_filters('the_date', date('d F Y, \O\r\a H:i', strtotime($match->post_date))); ?></td>
+                        <td class=when><?php echo apply_filters('the_date', date('d.m.Y, \O\r\a H:i', strtotime($match->post_date))); ?></td>
                         <td class=teams><?php echo $at_home? $us : $them; ?> <br> <?php echo $at_home? $them : $us;
 
                         if($news_ID):
