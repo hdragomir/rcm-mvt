@@ -80,12 +80,13 @@
         <?php
             $match_query = new WP_Query('post_type=rankings&posts_per_page=-1&order=desc&meta_key=puncte&orderby=meta_value');
             $matches = $match_query->get_posts();
-            $leagues = get_terms('league');
+            $leagues = array_reverse(get_terms('league'));
             global $league;
 
             foreach($leagues as $league ):
                 $reduced = array_filter($matches, 'reduce_by_global_league');
                 if(! $reduced) continue;
+                $reduced = array_values($reduced);
             ?>
           
 
