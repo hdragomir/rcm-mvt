@@ -3,12 +3,19 @@
 <!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
 <!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
 <!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
-<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js" xmlns:og="http://ogp.me/ns#"
+      xmlns:fb="https://www.facebook.com/2008/fbml"> <!--<![endif]-->
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
     <title><?php wp_title('|', 1, 'right'); bloginfo('site_title'); ?></title>
+
+    <meta property="og:title" content="<?php wp_title('|', 1, 'right'); bloginfo('site_title'); ?>"/>
+    <meta property="og:image" content="<?php echo get_template_directory_uri(); ?>/img/logo.png"/>
+    <meta property="og:site_name" content="Rugby Club Municipal Universitatea de Vest Timisoara"/>
+    <meta property="fb:admins" content="100000564703312"/>
+
 	<meta name="description" content="">
 	<meta name="author" content="">
 
