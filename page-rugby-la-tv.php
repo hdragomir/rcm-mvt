@@ -28,7 +28,7 @@
 
             <article>
 
-                <div class="date"><?php echo apply_filters('the_date', date('d F Y, \O\r\a H:i', strtotime($show->post_date))); ?></div>
+                <div class="date"><?php echo apply_filters('the_date', date('d F Y, \o\r\a H:i', strtotime($show->post_date))); ?></div>
                 <h2>
                 <?php $teams = array_combine(array(0,1), get_the_terms($show->ID, 'versus'));
                     echo rcm_term_name($teams[0]);
