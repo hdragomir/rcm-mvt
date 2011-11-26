@@ -16,8 +16,8 @@
     <meta property="og:site_name" content="Rugby Club Municipal Universitatea de Vest Timisoara"/>
     <meta property="fb:admins" content="100000564703312"/>
 
-	<meta name="description" content="">
-	<meta name="author" content="">
+	<meta name="description" content="Pagina oficiala a clubului de rugby RCM Universitatea de Vest Timisoara">
+	<meta name="author" content="Oana Barbu, Ciprian Stefanescu">
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
