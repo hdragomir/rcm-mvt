@@ -169,7 +169,7 @@ footer{ margin-top: 120px; }
 .single #wrap .post-content, .page #wrap .post-content{ color: #404040; color: rgba(0,0,0, .75); font-size: 14px;
     margin-right: 250px;
 }
-.single.page-slug-rugby-la-tv #wrap .post-content{
+.page.page-slug-rugby-la-tv #wrap .post-content{
     margin-right: 0;
 }
 
