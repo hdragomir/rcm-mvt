@@ -411,6 +411,11 @@ ul.linker{ font-size: 18px; margin-left: 0; }
     #homepage-slider .next{ background-image: url('img/arrow-right.png'); right: -26px; }
     #homepage-slider .prev{ background-image: url('img/arrow-left.png'); left: -26px; }
 
+    span.tv-channel{
+        display: block;
+        margin: 4px 0;
+    }
+
 
 #greeter{ width: 640px; margin-bottom: 50px; font-size: 14px; font-weight: bold; line-height: 24px; color: #000; display: none; }
 

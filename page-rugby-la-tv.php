@@ -24,11 +24,17 @@
 
         if($shows->have_posts()): ?>
         <div class="article-list eventslist clearfix">
-            <?php foreach($shows->get_posts() as $show): ?>
+            <?php foreach($shows->get_posts() as $show): 
+            
+            $stage = get_post_meta($show->ID, 'etapa', true);
+            $league = @array_shift( get_the_terms($show->ID, 'league') );
+
+            $preheader = $league->name . ( $stage ?  " / Etapa $stage" : '');
+            ?>
 
             <article>
 
-                <div class="date"><?php echo apply_filters('the_date', date('d F Y, \o\r\a H:i', strtotime($show->post_date))); ?></div>
+                <div class="preheader"><?php echo $preheader; ?></div>
                 <h2>
                 <?php $teams = array_combine(array(0,1), get_the_terms($show->ID, 'versus'));
                     echo rcm_term_name($teams[0]);
@@ -37,10 +43,12 @@
                     endif;
                 ?>
                 </h2>
-                <div class="meta"><?php
+                <div class="meta"><?php echo apply_filters('the_date', date('d F Y, \o\r\a H:i', strtotime($show->post_date))); 
 
                 $program = array_shift(get_the_terms($show->ID, 'tv_program'));
-                echo rcm_term_name($program);
+                ?>
+                <span class="tv-channel"><?php echo rcm_term_name($program); ?></span>
+                <?php
 
                 $online = get_post_meta($show->ID, 'vezi_online', true);
                 if($online):
