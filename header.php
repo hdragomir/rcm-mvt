@@ -37,91 +37,9 @@
     <?php if(is_home()): ?>
 
     <div id="homepage-slider">
-        <a href="#" class="prev ir">&lsaquo;</a>
         <div class="slide">
-
-            <img src="<?php echo get_template_directory_uri(); ?>/slides/01.jpg" alt="" />
-            <div class="text-wrap">
-                <div class="text">Bine ati venit pe site-ul oficial al clubului de rugby RCM MVT Universitatea de Vest Timisoara! <br /> Aici nimeni nu se dă rotund!</div>
-            </div>
-
+            <img src="<?php echo get_template_directory_uri(); ?>/slides/xx.jpg" title="Un omagiu adus lui Gh. Rascanu" alt="Un omagiu adus lui Gh. Rascanu" />
         </div>
-
-
-        <div class="slide">
-
-            <img src="<?php echo get_template_directory_uri(); ?>/slides/02.jpg" alt="" />
-            <div class="text-wrap">
-                <div class="text">Respect</div>
-            </div>
-
-        </div>
-
-        <div class="slide">
-
-            <img src="<?php echo get_template_directory_uri(); ?>/slides/03.jpg" alt="" />
-            <div class="text-wrap">
-                <div class="text">Loialitate</div>
-            </div>
-
-        </div>
-
-        <div class="slide">
-
-            <img src="<?php echo get_template_directory_uri(); ?>/slides/04.jpg" alt="" />
-            <div class="text-wrap">
-                <div class="text">Ofensiva</div>
-            </div>
-
-        </div>
-
-        <div class="slide">
-
-            <img src="<?php echo get_template_directory_uri(); ?>/slides/05.jpg" alt="" />
-            <div class="text-wrap">
-                <div class="text">Indemanare</div>
-            </div>
-
-        </div>
-
-        <div class="slide">
-
-            <img src="<?php echo get_template_directory_uri(); ?>/slides/06.jpg" alt="" />
-            <div class="text-wrap">
-                <div class="text">Fair-play</div>
-            </div>
-
-        </div>
-
-        <div class="slide">
-
-            <img src="<?php echo get_template_directory_uri(); ?>/slides/07.jpg" alt="" />
-            <div class="text-wrap">
-                <div class="text">Onoare</div>
-            </div>
-
-        </div>
-
-        <div class="slide">
-
-            <img src="<?php echo get_template_directory_uri(); ?>/slides/08.jpg" alt="" />
-            <div class="text-wrap">
-                <div class="text">Control</div>
-            </div>
-
-        </div>
-
-        <div class="slide">
-
-            <img src="<?php echo get_template_directory_uri(); ?>/slides/09.jpg" alt="" />
-            <div class="text-wrap">
-                <div class="text">Posesie</div>
-            </div>
-
-        </div>
-
-        <a href="#" class="next ir">&lsaquo;</a>
-
     </div>
 
     <?php endif; ?>

@@ -26,6 +26,9 @@ $(function(){
             };
 
 
+        if(all < 2){
+            return;
+        }
 
 
         slider.delegate('.ir', 'click', function(ev){
