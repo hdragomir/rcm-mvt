@@ -37,9 +37,14 @@
     <?php if(is_home()): ?>
 
     <div id="homepage-slider">
+        <?php foreach( get_header_images_hash() as $slide ): ?>
         <div class="slide">
-            <img src="<?php echo get_template_directory_uri(); ?>/slides/xx.jpg" title="Un omagiu adus lui Gh. Rascanu" alt="Un omagiu adus lui Gh. Rascanu" />
+            <img src="<?php echo $slide['image_src']; ?>" title="<?php echo $slide['caption']; ?>" alt="" />
+            <div class="text-wrap">
+                <div class="text"><?php echo $slide['caption']; ?></div>
+            </div>
         </div>
+        <?php endforeach; ?>
     </div>
 
     <?php endif; ?>

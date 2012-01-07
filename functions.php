@@ -14,6 +14,7 @@ function rcm_init(){
 
 
     add_image_size('page-thumbnail', 940, 240, true);
+    add_image_size('slide', 928, 321, true);
     add_image_size('player-thumbnail', 290, 290, false);
     add_image_size('partner-thumb', 120, 120, false);
 
@@ -117,6 +118,14 @@ function rcm_init(){
             'singular_name' => 'Program',
             'choose_from_most_used' => 'Alege dintre cele mai folosite'
         )
+    ));
+
+    register_post_type('slide', array(
+        'labels' => array('name' => 'Imagini Header',
+                          'singular_name' => 'Imagine'),
+        'public' => true,
+        'ui' => true,
+        'supports' => array('title', 'thumbnail', 'post-formats', 'post-thumbnails')
     ));
 
 
@@ -324,3 +333,14 @@ function reduce_by_global_league($match){
     global $league;
     return is_object_in_term($match->ID, 'league', $league);
 }
+
+function get_header_images_hash () {
+    $slides = array();
+    foreach(query_posts('post_type=slide&posts_per_page=-1') as $slide){
+        $slides[] = array('caption' => $slide->post_title, 'image_src' =>
+            array_shift( wp_get_attachment_image_src( get_post_thumbnail_id( $slide->ID ), 'slide' ) )
+        );
+    }
+    return $slides;
+}
+
