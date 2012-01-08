@@ -43,7 +43,6 @@
         ?>
         <div class="slide">
             <img src="<?php echo $slide['image_src'][0]; ?>" title="<?php echo $slide['caption']; ?>" alt=""
-                width="<?php echo RCM_HEADER_SLIDE_WIDTH; ?>" height="<?php echo RCM_HEADER_SLIDE_HEIGHT; ?>"
             />
             <div class="text-wrap">
                 <div class="text"><?php echo $slide['caption']; ?></div>

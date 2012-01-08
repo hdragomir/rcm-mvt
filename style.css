@@ -400,7 +400,8 @@ ul.linker{ font-size: 18px; margin-left: 0; }
 
 #homepage-slider{ position: absolute; top: 159px; width: 928px; height: 321px; border: 6px solid #130835; background: #130835; left: 50%; margin-left: -470px;}
 
-    #homepage-slider .slide{ position: absolute; top: 0; left: 0; width: 928px; height: 321px; }
+    #homepage-slider .slide{ position: absolute; top: 0; left: 0; width: 928px; height: 321px; overflow: hidden; }
+        #homepage-slider .slide img { width: 928px; min-height: 321px; }
         #homepage-slider .slide .text-wrap{ position: absolute; bottom: 0; width: 858px; background: #000; background: rgba(0,0,0, .5); padding: 25px 35px; }
         #homepage-slider .slide .text{ font-weight: bold; font-size: 18px; color: #fff; width: 440px; }
 
