@@ -2,6 +2,8 @@
 
 
 define('T_URI', get_template_directory_uri() . '/');
+define('RCM_HEADER_SLIDE_WIDTH', 928);
+define('RCM_HEADER_SLIDE_HEIGHT', 321);
 
 add_theme_support('post-thumbnails');
 
@@ -14,7 +16,7 @@ function rcm_init(){
 
 
     add_image_size('page-thumbnail', 940, 240, true);
-    add_image_size('slide', 928, 321, true);
+    add_image_size('slide', RCM_HEADER_SLIDE_WIDTH, RCM_HEADER_SLIDE_HEIGHT, true);
     add_image_size('player-thumbnail', 290, 290, false);
     add_image_size('partner-thumb', 120, 120, false);
 
@@ -338,7 +340,7 @@ function get_header_images_hash () {
     $slides = array();
     foreach(query_posts('post_type=slide&posts_per_page=-1') as $slide){
         $slides[] = array('caption' => $slide->post_title, 'image_src' =>
-            array_shift( wp_get_attachment_image_src( get_post_thumbnail_id( $slide->ID ), 'slide' ) )
+            wp_get_attachment_image_src( get_post_thumbnail_id( $slide->ID ), 'slide' )
         );
     }
     return $slides;

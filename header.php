@@ -37,14 +37,21 @@
     <?php if(is_home()): ?>
 
     <div id="homepage-slider">
-        <?php foreach( get_header_images_hash() as $slide ): ?>
+        <?php foreach( get_header_images_hash() as $slide ):
+            if( $slide['image_src'][1] >= RCM_HEADER_SLIDE_WIDTH - 150 &&
+                $slide['image_src'][2] >= RCM_HEADER_SLIDE_HEIGHT - 50 ):
+        ?>
         <div class="slide">
-            <img src="<?php echo $slide['image_src']; ?>" title="<?php echo $slide['caption']; ?>" alt="" />
+            <img src="<?php echo $slide['image_src'][0]; ?>" title="<?php echo $slide['caption']; ?>" alt=""
+                width="<?php echo RCM_HEADER_SLIDE_WIDTH; ?>" height="<?php echo RCM_HEADER_SLIDE_HEIGHT; ?>"
+            />
             <div class="text-wrap">
                 <div class="text"><?php echo $slide['caption']; ?></div>
             </div>
         </div>
-        <?php endforeach; ?>
+        <?php 
+            endif;
+        endforeach; ?>
     </div>
 
     <?php endif; ?>
