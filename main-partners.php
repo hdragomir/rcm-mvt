@@ -4,7 +4,8 @@
 $partners = get_bookmarks(array(
     "orderby" => "rating",
     "order" => "DESC",
-    "category_name" => "Parteneri"
+    "category_name" => "Parteneri",
+    "limit" => is_home() ? 7 : -1
 ));
 
 foreach($partners as $partner):

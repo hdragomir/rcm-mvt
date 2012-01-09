@@ -389,6 +389,10 @@ ul.linker{ font-size: 18px; margin-left: 0; }
         float: left;
         width: 110px;
         margin-left: 26px;
+        margin-bottom: 52px;
+    }
+    .home .partner-image-list li{
+        margin-bottom: 0;
     }
         .partner-image-list li:first-child{margin-left: 0;}
         .partner-image-list li img{
