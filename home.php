@@ -78,17 +78,29 @@
 
         </div>
         <?php
-            $match_query = new WP_Query('post_type=rankings&posts_per_page=-1&order=desc&meta_key=puncte&orderby=meta_value');
+            $match_query = new WP_Query(
+                array(
+                'post_type' => 'rankings',
+                'posts_per_page' => -1,
+                'order' => 'desc',
+                'meta_key' => 'puncte',
+                'orderby' => 'meta_value',
+                )
+            );
             $matches = $match_query->get_posts();
-            $leagues = array_reverse(get_terms('league'));
+            $leagues = (get_terms('league'));
             global $league;
 
-            foreach($leagues as $league ):
+            foreach($leagues as $league):
+                //TODO make 'rugby-7' configurable through backend
+                //CHANGE HERE
+                if (false === stripos($league->slug, 'liga') || false === stripos($league->slug, date('Y'))) {
+                    continue;
+                }
                 $reduced = array_filter($matches, 'reduce_by_global_league');
                 if(! $reduced) continue;
                 $reduced = array_values($reduced);
             ?>
-          
 
         <div class="pane" id=rankings>
             <div class="top">
